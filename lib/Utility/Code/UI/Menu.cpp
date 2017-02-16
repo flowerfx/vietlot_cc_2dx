@@ -1,6 +1,6 @@
-#include "Screen.h"
-#include "../../InputManager.h"
-#include "../../SoundManager.h"
+#include "Menu.h"
+#include "../InputManager.h"
+#include "../SoundManager.h"
 
 namespace Utility
 {
@@ -42,7 +42,7 @@ namespace Utility
 		}
 
 
-		Screen::Screen()
+		MenuEntity::MenuEntity()
 		{
 			p_IsStopUpdate = false;
 
@@ -71,7 +71,7 @@ namespace Utility
 		}
 
 
-		Screen::~Screen()
+		MenuEntity::~MenuEntity()
 		{
 			for (int i = 0; i < (int)p_ListStatus.size(); i++)
 			{
@@ -92,7 +92,7 @@ namespace Utility
 			_func_action = nullptr;
         }
 
-		void Screen::onDrawMenuWidget(Renderer *renderer, const Mat4& transform, uint32_t flags)
+		void MenuEntity::onDrawMenuWidget(Renderer *renderer, const Mat4& transform, uint32_t flags)
 		{
 			for (int i = 0; i < (int)p_listLayerWidget.size(); i++)
 			{
@@ -101,7 +101,7 @@ namespace Utility
 
 		}
 
-		void Screen::onVisitMenuWidget(Renderer *renderer, const Mat4& transform, uint32_t flags)
+		void MenuEntity::onVisitMenuWidget(Renderer *renderer, const Mat4& transform, uint32_t flags)
 		{
 			for (int i = 0; i < (int)p_listLayerWidget.size(); i++)
 			{
@@ -110,7 +110,7 @@ namespace Utility
 
 		}
 
-		void Screen::onUpdateMenuWidget(float dt)
+		void MenuEntity::onUpdateMenuWidget(float dt)
 		{
 			if (p_IsStopUpdate)
 			{
@@ -165,32 +165,32 @@ namespace Utility
 			}
 		}
 
-		RKString Screen::GetNameUI() 
+		RKString MenuEntity::GetNameUI() 
 		{ 
 			return name_ui; 
 		}
 
-		void Screen::SetIdxMenuData(int idx) 
+		void MenuEntity::SetIdxMenuData(int idx) 
 		{ 
 			p_IdxMenuData = idx; 
 		}
 
-		int Screen::GetMaxIdxFirst()
+		int MenuEntity::GetMaxIdxFirst()
 		{ 
 			return p_max_idx_process_first;
 		}
 
-		bool Screen::IsInteractive()
+		bool MenuEntity::IsInteractive()
 		{ 
 			return p_IsMenuInteractive; 
 		}
 
-		Vec2 Screen::GetDesignSize()
+		Vec2 MenuEntity::GetDesignSize()
 		{ 
 			return p_design_size; 
 		}
 
-		void Screen::OnCheckTouchEvent(const RKString & name, UI_TYPE type_widget, WidgetEntity * _widget)
+		void MenuEntity::OnCheckTouchEvent(const RKString & name, UI_TYPE type_widget, WidgetEntity * _widget)
 		{
 			if (GetCurrentStatus() != STATUS_MENU::M_IDLE)
 				return;
@@ -204,7 +204,7 @@ namespace Utility
 			OnProcessWidgetChild(name, type_widget, _widget);
 		}
 
-		LayerEntity *  Screen::InitTheChildElement(const RKString & str, LayerEntity * parent_layer, xml::UILayerWidgetDec * layer)
+		LayerEntity *  MenuEntity::InitTheChildElement(const RKString & str, LayerEntity * parent_layer, xml::UILayerWidgetDec * layer)
 		{
 			//
 			if (str == "" || layer == nullptr)
@@ -217,7 +217,7 @@ namespace Utility
 			_layer_return->InitParam(layer->NameWidget, layer);
 			_layer_return->SetValueFromXML(layer);
 			_layer_return->SetMenuParent(this);
-			_layer_return->SetCallBack(std::mem_fn(&Screen::OnCheckTouchEvent));
+			_layer_return->SetCallBack(std::mem_fn(&MenuEntity::OnCheckTouchEvent));
 			_layer_return->setCascadeOpacityEnabled(true);
 			bool isRootLayer = (layer->GeneralValue->GetDataInt("root") == 1);
 			_layer_return->SetRootLayer(layer->GeneralValue->GetDataInt("root") == 1);
@@ -273,7 +273,7 @@ namespace Utility
 
 		}
 
-		void Screen::InitMenuWidgetEntityWithParam(const RKString & name,const Vec2 & design_size)
+		void MenuEntity::InitMenuWidgetEntityWithParam(const RKString & name,const Vec2 & design_size)
 		{
 			name_ui = name;
 			p_design_size = design_size;
@@ -288,7 +288,7 @@ namespace Utility
 					1));
 		}
 
-		void Screen::InitMenuWidgetEntity(const RKString & str)
+		void MenuEntity::InitMenuWidgetEntity(const RKString & str)
 		{
 			name_ui = str;
 
@@ -323,7 +323,7 @@ namespace Utility
 
 		}
 
-		void Screen::OnReloadString()
+		void MenuEntity::OnReloadString()
 		{
 			/*for (int i = 0; i < p_ListMemberInGame.Size(); i++)
 			{
@@ -334,7 +334,7 @@ namespace Utility
 			}*/
 		}
 
-		bool Screen::OnSetActionFadeAllResource(STATUS_MENU stateFade, unsigned int idx_tag_appear)
+		bool MenuEntity::OnSetActionFadeAllResource(STATUS_MENU stateFade, unsigned int idx_tag_appear)
 		{
 			bool have_value = false;
 			SetStatusAtIdx(stateFade, idx_tag_appear);
@@ -365,7 +365,7 @@ namespace Utility
 			return have_value;
 		}
 
-		bool Screen::OnUpdateFadeProcessChildByTagIdx(unsigned int idx_tag_appear, float process_time, float dt, STATUS_MENU stateFade)
+		bool MenuEntity::OnUpdateFadeProcessChildByTagIdx(unsigned int idx_tag_appear, float process_time, float dt, STATUS_MENU stateFade)
 		{
 			if (p_DeltaMoveTime == process_time)
 			{
@@ -447,7 +447,7 @@ namespace Utility
 			return AllFinish;
 		}
 
-		void Screen::RemoveActionFadeAllChild(int idx)
+		void MenuEntity::RemoveActionFadeAllChild(int idx)
 		{
 			for (int i = 0; i < (int)p_listLayerWidget.size(); i++)
 			{
@@ -457,14 +457,14 @@ namespace Utility
 			}
 		}
 
-		STATUS_MENU Screen::GetCurrentStatus(int idx)
+		STATUS_MENU MenuEntity::GetCurrentStatus(int idx)
 		{
 			if (idx >= 0 && idx < (int)p_ListStatus.size())
 				return p_ListStatus.at(idx)->p_curStatus;
 			return STATUS_MENU::M_IDLE;
 		}
 
-		void Screen::SetStatusAtIdx(STATUS_MENU status, int idx)
+		void MenuEntity::SetStatusAtIdx(STATUS_MENU status, int idx)
 		{
 			if (idx >= 0 && idx < (int)p_ListStatus.size())
 			{
@@ -475,14 +475,14 @@ namespace Utility
 			}
 		}
 
-		bool Screen::GetActiveStatusAtidx(int idx)
+		bool MenuEntity::GetActiveStatusAtidx(int idx)
 		{
 			if (idx >= 0 && idx < (int)p_ListStatus.size())
 				return p_ListStatus.at(idx)->p_IsActive;
 			return STATUS_MENU::M_IDLE;
 		}
 
-		void Screen::SetActiveStatusAtIdx(bool active, int idx)
+		void MenuEntity::SetActiveStatusAtIdx(bool active, int idx)
 		{
 			if (idx >= 0 && idx < (int)p_ListStatus.size())
 			{
@@ -495,7 +495,7 @@ namespace Utility
 			}
 		}
 
-		void Screen::OnFadeIn()
+		void MenuEntity::OnFadeIn()
 		{
 			SetStatusAtIdx(STATUS_MENU::M_FADEIN, 0);
 			OnSetActionFadeAllResource(GetCurrentStatus());
@@ -505,7 +505,7 @@ namespace Utility
 			push_layer_to_main_scene();
 		}
 
-		void Screen::OnFadeOut()
+		void MenuEntity::OnFadeOut()
 		{
 			int maximum_idx_appear = 0;
 			for (int i = 0; i < (int)p_ListStatus.size(); i++)
@@ -525,22 +525,22 @@ namespace Utility
 			p_IdxUITagAppear = maximum_idx_appear; //set maximum index
 		}
 
-		void Screen::OnShow()
+		void MenuEntity::OnShow()
 		{
 			OnFadeIn();
 
 		}
 
-		void Screen::OnHide()
+		void MenuEntity::OnHide()
 		{
 			//
 			OnFadeOut();
 		}
 
-		WidgetEntity * Screen::GetWidgetChildByName(const RKString & name_path)
+		WidgetEntity * MenuEntity::GetWidgetChildByName(const RKString & name_path)
 		{
 			auto name_list = name_path.Split(".");
-			auto layer_contain = Screen::GetLayerChildByName(name_list.GetAt(0));
+			auto layer_contain = MenuEntity::GetLayerChildByName(name_list.GetAt(0));
 			if (layer_contain)
 			{
 				RKString sub_name = "";
@@ -558,7 +558,7 @@ namespace Utility
 			return nullptr;
 		}
 
-		LayerEntity* Screen::GetLayerChildByName(const RKString & name_path)
+		LayerEntity* MenuEntity::GetLayerChildByName(const RKString & name_path)
 		{
 			auto name_list = name_path.Split(".");
 			for (unsigned int i = 0; i < p_listLayerWidget.size(); i++)
@@ -589,12 +589,12 @@ namespace Utility
 			return nullptr;
 		}
 
-		void Screen::OnFinishFadeAtCurrentIdx(int idx, STATUS_MENU status)
+		void MenuEntity::OnFinishFadeAtCurrentIdx(int idx, STATUS_MENU status)
 		{
 			//the abstrast class may be not implement, which class use, that class implement ex: SelectionMode UI
 		}
 
-		void Screen::OnProcessWhenEndOrBegin(STATUS_MENU cur_status)
+		void MenuEntity::OnProcessWhenEndOrBegin(STATUS_MENU cur_status)
 		{
 			if (p_IdxUITagAppear == p_max_idx_process_first)
 			{
@@ -618,7 +618,7 @@ namespace Utility
 			}
 		}
 
-		void Screen::OnProcessWhenTagIdxMulti(int max_idx, int idx, STATUS_MENU cur_status, STATUS_MENU status)
+		void MenuEntity::OnProcessWhenTagIdxMulti(int max_idx, int idx, STATUS_MENU cur_status, STATUS_MENU status)
 		{
 			if (status == STATUS_MENU::M_FADEIN) //fade in
 			{
@@ -668,7 +668,7 @@ namespace Utility
 			}
 		}
 
-		void Screen::OnAllProcessFinishFadeIdx(int idx, int max_idx, STATUS_MENU status)
+		void MenuEntity::OnAllProcessFinishFadeIdx(int idx, int max_idx, STATUS_MENU status)
 		{
 			STATUS_MENU cur_status = GetCurrentStatus(idx);
 			if (idx == 0 && cur_status != STATUS_MENU::M_IDLE /*&& idx < max_idx*/)
@@ -682,7 +682,7 @@ namespace Utility
 
 		}
 
-		bool Screen::OnCallProcessOfChild(const RKString & name_child_path, const RKString & command_str, int type)
+		bool MenuEntity::OnCallProcessOfChild(const RKString & name_child_path, const RKString & command_str, int type)
 		{
 			ActionProcess * object_layer = nullptr;
 			if (type == 0) //call layer
@@ -727,7 +727,7 @@ namespace Utility
 		}
 
 
-		void Screen::OnShowOrHideIdxTarget(int idx_target)
+		void MenuEntity::OnShowOrHideIdxTarget(int idx_target)
 		{
 			if (idx_target >= (int)p_ListStatus.size() || GetCurrentStatus(idx_target) != STATUS_MENU::M_IDLE)
 			{
@@ -751,39 +751,39 @@ namespace Utility
 			}
 		}
 
-		void Screen::OnBeginFadeIn()
+		void MenuEntity::OnBeginFadeIn()
 		{
 			//abstrast class not impelemt this 
 			return;
 		}
 
-		void Screen::OnFadeInComplete()
+		void MenuEntity::OnFadeInComplete()
 		{
 		//	SetLayerInteractive(true);
 			//abstrast class not impelemt this 
 			return;
 		}
 
-		void Screen::OnBeginFadeOut()
+		void MenuEntity::OnBeginFadeOut()
 		{
 		//	SetLayerInteractive(false);
 			//abstrast class not impelemt this 
 			return;
 		}
 
-		void Screen::OnFadeOutComplete()
+		void MenuEntity::OnFadeOutComplete()
 		{
 			//abstrast class not impelemt this 
 			return;
 		}
 
-		void Screen::onSpecificSizeChange(float cur_width, float cur_height)
+		void MenuEntity::onSpecificSizeChange(float cur_width, float cur_height)
 		{
 			//abstrast class not impelemt this 
 			return;
 		}
 
-		void Screen::push_layer_to_main_scene(int order)
+		void MenuEntity::push_layer_to_main_scene(int order)
 		{
 			Scene * scene = Director::getInstance()->getRunningScene();
 			if (order == 0)
@@ -793,14 +793,14 @@ namespace Utility
 			scene->addChild(this, order);
 		}
 
-		void Screen::remove_layer_from_main_scene()
+		void MenuEntity::remove_layer_from_main_scene()
 		{
 			Scene * scene = Director::getInstance()->getRunningScene();
             this->stopAllActions();
 			scene->removeChild(this);
 		}
 
-		void Screen::SetLayerInteractive(bool value)
+		void MenuEntity::SetLayerInteractive(bool value)
 		{
 			p_IsMenuInteractive = value;
 			for (int i = 0; i < (int)p_listLayerWidget.size(); i++)
@@ -809,7 +809,7 @@ namespace Utility
 			}
 		}
 
-		void Screen::SetChildInteractive(const RKString & name_path, bool value)
+		void MenuEntity::SetChildInteractive(const RKString & name_path, bool value)
 		{
 			auto layer_child = GetLayerChildByName(name_path);
 			if (!layer_child)
@@ -830,22 +830,22 @@ namespace Utility
 			}
 		}
 
-		void Screen::OnTouchMenuBegin(const cocos2d::Point & p)
+		void MenuEntity::OnTouchMenuBegin(const cocos2d::Point & p)
 		{
 			//abstrast class not handle this
 		}
 
-		void Screen::OnTouchMenuEnd(const cocos2d::Point & p)
+		void MenuEntity::OnTouchMenuEnd(const cocos2d::Point & p)
 		{
 			//abstrast class not handle this
 		}
 
-		void Screen::OnTouchMenuHold(const cocos2d::Point & p)
+		void MenuEntity::OnTouchMenuHold(const cocos2d::Point & p)
 		{
 			//abstrast class not handle this
 		}
 
-		void Screen::OnUpdateTouchMenu()
+		void MenuEntity::OnUpdateTouchMenu()
 		{
 			//when fade in or out do not process touch button
 			if (GetCurrentStatus() != STATUS_MENU::M_IDLE)
@@ -878,12 +878,12 @@ namespace Utility
 			}
 		}
 
-		void Screen::OnTouchEnable(bool value)
+		void MenuEntity::OnTouchEnable(bool value)
 		{
 			setTouchEnabled(value);
 		}
 
-		void Screen::RemoveChildWidget(WidgetEntity * widget)
+		void MenuEntity::RemoveChildWidget(WidgetEntity * widget)
 		{
 			LayerEntity * layer_root = GetRoot();
 
@@ -896,7 +896,7 @@ namespace Utility
 			PASSERT2(result == true, "warning ! wiget cannot be deleted !");
 		}
 
-		void Screen::RemoveChildWidgetByName(const RKString & name)
+		void MenuEntity::RemoveChildWidgetByName(const RKString & name)
 		{
 			LayerEntity * layer_root = GetRoot();
 
@@ -909,7 +909,7 @@ namespace Utility
 			PASSERT2(result == true, "warning ! wiget cannot be deleted !");
 		}
 
-		LayerEntity* Screen::GetRoot()
+		LayerEntity* MenuEntity::GetRoot()
 		{
 			LayerEntity * layer_root = nullptr;
 			for (int i = 0; i < (int)p_listLayerWidget.size(); i++)
@@ -928,7 +928,7 @@ namespace Utility
 				layer_root->setAnchorPoint(Vec2(0.5f, 0.5f));
 				layer_root->SetPosition(GetGameSize() / 2.f);
 				layer_root->SetMenuParent(this);
-				layer_root->SetCallBack(std::mem_fn(&Screen::OnCheckTouchEvent));
+				layer_root->SetCallBack(std::mem_fn(&MenuEntity::OnCheckTouchEvent));
 				layer_root->setCascadeOpacityEnabled(true);
 				layer_root->SetRootLayer(true);
 				layer_root->SetIndexAppear(0);
@@ -946,7 +946,7 @@ namespace Utility
 			return layer_root;
 		}
 
-		void Screen::AddChildWidget(WidgetEntity * widget_entity)
+		void MenuEntity::AddChildWidget(WidgetEntity * widget_entity)
 		{
 			LayerEntity * layer_root = GetRoot();
 
@@ -963,40 +963,40 @@ namespace Utility
 			layer_root->AddWidgetEntity(widget_entity);
 		}
 
-		void Screen::onKeyHold(float interval)
+		void MenuEntity::onKeyHold(float interval)
 		{
 
 		}
-		void Screen::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
+		void MenuEntity::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
 		{
 
 		}
-		void Screen::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
+		void MenuEntity::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
 		{
 
 		}
 
-		void Screen::onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Event  *event)
+		void MenuEntity::onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Event  *event)
 		{
 			OnTouchMenuBegin(touches[0]->getStartLocation());
 		}
 
-		void Screen::onTouchesMoved(const std::vector<Touch*>& touches, cocos2d::Event  *event)
+		void MenuEntity::onTouchesMoved(const std::vector<Touch*>& touches, cocos2d::Event  *event)
 		{
 			OnTouchMenuHold(touches[0]->getLocation());
 		}
 
-		void Screen::onTouchesEnded(const std::vector<Touch*>& touches, cocos2d::Event  *event)
+		void MenuEntity::onTouchesEnded(const std::vector<Touch*>& touches, cocos2d::Event  *event)
 		{
 			OnTouchMenuEnd(touches[0]->getLocation());
 		}
 
-		void Screen::onTouchesCancelled(const std::vector<Touch*>& touches, cocos2d::Event  *event)
+		void MenuEntity::onTouchesCancelled(const std::vector<Touch*>& touches, cocos2d::Event  *event)
 		{
 
 		}
 
-		void Screen::onLanguageChanged(LANGUAGE_TYPE lang)
+		void MenuEntity::onLanguageChanged(LANGUAGE_TYPE lang)
 		{
 			for (int i = 0; i < (int)p_listLayerWidget.size(); i++)
 			{
@@ -1004,7 +1004,7 @@ namespace Utility
 			}
 		}
         
-        bool Screen::MoveScreenUpWhenKeyboardAppear(cocos2d::Rect rect_text_field)
+        bool MenuEntity::MoveScreenUpWhenKeyboardAppear(cocos2d::Rect rect_text_field)
         {
             auto rect_keyboard = GetSizeKeyboard();
             
@@ -1032,7 +1032,7 @@ namespace Utility
             return true;
         }
         
-        bool Screen::ResetScreenWhenKeyboardHide()
+        bool MenuEntity::ResetScreenWhenKeyboardHide()
         {
           //  auto rect_keyboard = GetSizeKeyboard();
           //
@@ -1045,7 +1045,7 @@ namespace Utility
             return true;
         }
         
-        void Screen::SetStageShowKeyboard(int stage , WidgetEntity * text_field )
+        void MenuEntity::SetStageShowKeyboard(int stage , WidgetEntity * text_field )
         {
 #ifdef _WIN32
             return;
@@ -1054,7 +1054,7 @@ namespace Utility
             p_textfield_infocus = text_field;
         }
         
-        void Screen::HandleMoveKeyboard()
+        void MenuEntity::HandleMoveKeyboard()
         {
             if(p_textfield_infocus == nullptr)
                 return;
@@ -1082,7 +1082,7 @@ namespace Utility
             }
         }
 
-		void Screen::ReloadUI(const RKString & path)
+		void MenuEntity::ReloadUI(const RKString & path)
 		{
 			for (int i = 0; i < (int)p_ListStatus.size(); i++)
 			{
@@ -1102,7 +1102,7 @@ namespace Utility
 			XMLMgr->ReloadUIMEnuWidgetDec(name_ui, path);
 		}
 
-		void Screen::SetStopUpdate(bool value)
+		void MenuEntity::SetStopUpdate(bool value)
 		{
 			p_IsStopUpdate = value;
 		}

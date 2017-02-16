@@ -1,8 +1,8 @@
 #ifndef __ACTION_PROCESS_H__
 #define __ACTION_PROCESS_H__
 
-#include "../../DisplayView.h"
-#include "../../ObjectTexture.h"
+#include "../DisplayView.h"
+#include "../ObjectTexture.h"
 
 #include "extensions/cocos-ext.h"
 #include "ui/CocosGUI.h"
@@ -46,7 +46,7 @@ namespace Utility
 			UI_PARTICLE,
 			UI_COUNT
 		};
-		class Screen;
+		class MenuEntity;
 		class LayerEntity;
 		class WidgetEntity;
 		class ActionProcess : public Ref
@@ -73,7 +73,7 @@ namespace Utility
 			//
 			unsigned int					p_index_appear;
 
-			Screen *						menu_point_to;
+			MenuEntity *					menu_point_to;
 			LayerEntity *					p_parent_layer;
 			WidgetEntity*					p_parent_widget;
 
@@ -197,10 +197,10 @@ namespace Utility
 
 			LayerEntity *	GetParentLayer();
 			WidgetEntity *	GetParentWidget();
-			Screen *		GetMenuParent();
+			MenuEntity *	GetMenuParent();
 
 			void			SetParentLayer(LayerEntity * parent);
-			void			SetMenuParent(Screen * menu);
+			void			SetMenuParent(MenuEntity * menu);
 			void			SetParentWidget(WidgetEntity * widget);
 
 			UI_TYPE getUIWidgetType();

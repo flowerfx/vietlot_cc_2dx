@@ -1,6 +1,6 @@
 #include "wButton.h"
-#include "Screen.h"
-#include "../../SoundManager.h"
+#include "Menu.h"
+#include "../SoundManager.h"
 namespace Utility
 {
 	namespace UI_Widget

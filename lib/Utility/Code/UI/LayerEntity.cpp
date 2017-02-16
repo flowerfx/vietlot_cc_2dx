@@ -20,8 +20,8 @@
 #include "wAnimationWidget.h"
 #include "wParticle.h"
 
-#include "../../SoundManager.h"
-#include "Screen.h"
+#include "../SoundManager.h"
+#include "Menu.h"
 namespace Utility
 {
 	namespace UI_Widget
@@ -802,7 +802,7 @@ namespace Utility
 			}
 		}
 
-		void LayerEntity::SetCallBack( std::function<void(Screen&, RKString, UI_TYPE, WidgetEntity*)> func)
+		void LayerEntity::SetCallBack( std::function<void(MenuEntity&, RKString, UI_TYPE, WidgetEntity*)> func)
 		{
 			func_call_widget = func;
 		}

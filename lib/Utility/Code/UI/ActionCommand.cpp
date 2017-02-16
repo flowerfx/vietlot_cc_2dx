@@ -1,6 +1,6 @@
 #include "ActionCommand.h"
 #include "LayerEntity.h"
-#include "../../LanguageMgr.h"
+#include "../LanguageMgr.h"
 namespace Utility
 {
 	namespace UI_Widget

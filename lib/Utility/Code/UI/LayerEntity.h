@@ -2,7 +2,7 @@
 #define __LAYER_ENTITY_H__
 
 #include "WidgetEntity.h"
-#include "../../Factory.h"
+#include "../Factory.h"
 //#include "wTimeProcessWidget.h"
 //#include "wListViewTable.h"
 using namespace RKUtils;
@@ -38,7 +38,7 @@ namespace Utility
 
 		protected:
 
-			std::function<void(Screen&, RKString, UI_TYPE , WidgetEntity*)> func_call_widget;
+			std::function<void(MenuEntity&, RKString, UI_TYPE , WidgetEntity*)> func_call_widget;
 
 			void AddWidgetWithName(Widget * element, const RKString & name);
 
@@ -89,7 +89,7 @@ namespace Utility
 			virtual LayerEntity	 * GetLayerChildByName(const RKString & name_str);
 
 			WidgetEntity * InitWidgetEntity(xml::UILayerWidgetDec * widget, LayerEntity * parent_layer, WidgetEntity * parent_widget);
-			void SetCallBack(std::function<void(Screen&, RKString, UI_TYPE, WidgetEntity*)> func);
+			void SetCallBack(std::function<void(MenuEntity&, RKString, UI_TYPE, WidgetEntity*)> func);
 			void SetActionProcessForAllChild(STATUS_MENU fade_state, unsigned int current_idx);
 			void SetIdxProcessGame(int idx);
 			std::vector<LayerEntity* > GetListLayerChild();

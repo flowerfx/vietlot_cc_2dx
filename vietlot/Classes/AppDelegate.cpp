@@ -5,11 +5,6 @@
 
 //#include "HelloWorldScene.h"
 #include "MainGame.h"
-#include "Features/IapMgr.h"
-#include "Features/FacebookMgr.h"
-#include "Features/GGSignInMgr.h"
-#include "Features/GCSignInMgr.h"
-
 #include "AppMacros.h"
 
 USING_NS_CC;
@@ -31,19 +26,15 @@ void AppDelegate::initGLContextAttrs()
 
 bool AppDelegate::applicationDidFinishLaunching() {
 
-	GetFacebookMgr()->init();
-	GetIapMgr()->init();
-    GetGGSignInMgr()->init();
-    GetGCSignInMgr()->init();
     
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
 #if defined _WIN32_
-		glview = GLViewImpl::createWithRect("iWin Online", Rect(0, 0, 1280, 800));
+		glview = GLViewImpl::createWithRect("Vietlot", Rect(0, 0, 1280, 800));
 #else
-        glview = GLViewImpl::create("iWin Online");
+        glview = GLViewImpl::create("Vietlot");
 #endif
         director->setOpenGLView(glview);
     }
@@ -75,7 +66,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	}
 	director->setContentScaleFactor(1.f);
 #ifdef _WIN32_
-	searchPath.push_back("../../../iwin/Resources");
+	searchPath.push_back("../../../vietlot/Resources");
 #endif
 
 	// set searching path

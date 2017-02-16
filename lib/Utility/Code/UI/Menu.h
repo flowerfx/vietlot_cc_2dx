@@ -27,7 +27,7 @@ namespace Utility
 			UIDecs(RKString sou_1, RKString sou_2, bool IsActive, float delayTime, int loop);
 		};
 
-		class Screen : public Layer
+		class MenuEntity : public Layer
 		{
 		protected:
 
@@ -80,8 +80,8 @@ namespace Utility
 			virtual void RemoveChildWidgetByName(const RKString & name);
 			virtual LayerEntity* GetRoot();
 
-			Screen();
-			virtual ~Screen();
+			MenuEntity();
+			virtual ~MenuEntity();
 			//
 			virtual int	Init() = 0;
 			virtual int	Update(float dt) = 0;

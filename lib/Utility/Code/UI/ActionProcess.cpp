@@ -1,12 +1,8 @@
 #include "ActionProcess.h"
-
 #include "LayerEntity.h"
-
 #include "WidgetEntity.h"
 namespace Utility
 {
-
-
 	namespace UI_Widget
 	{
 		ActionProcess::ActionProcess()
@@ -1358,12 +1354,12 @@ namespace Utility
 		//
 		LayerEntity *	ActionProcess::GetParentLayer() { return p_parent_layer; }
 		WidgetEntity *	ActionProcess::GetParentWidget() { return p_parent_widget; }
-		Screen *		ActionProcess::GetMenuParent() { return menu_point_to; }
+		MenuEntity *	ActionProcess::GetMenuParent() { return menu_point_to; }
 
 		UI_TYPE ActionProcess::getUIWidgetType() { return p_typeUI; }
 
 		void			ActionProcess::SetParentLayer(LayerEntity * parent){ p_parent_layer = parent; }
-		void			ActionProcess::SetMenuParent(Screen * menu) { menu_point_to = menu; }
+		void			ActionProcess::SetMenuParent(MenuEntity * menu) { menu_point_to = menu; }
 		void			ActionProcess::SetParentWidget(WidgetEntity * widget) { p_parent_widget = widget; }
 
 		bool ActionProcess::IsAllChildFinishAction() { return true; }

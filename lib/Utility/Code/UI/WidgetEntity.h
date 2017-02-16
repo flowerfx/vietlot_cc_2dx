@@ -2,7 +2,7 @@
 #define __WIDGET_ENTITY_H__
 
 #include "ActionProcess.h"
-#include "../../LanguageMgr.h"
+#include "../LanguageMgr.h"
 #include "RKBaseLog/Debug.h"
 using namespace RKUtils;
 using namespace ui;

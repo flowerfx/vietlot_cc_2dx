@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 
-#include "../../LoadDataXML.h"
+#include "../LoadDataXML.h"
 #include "RKTool_Code/RKList.h"
 #include "RKBaseLog/Debug.h"
 #define MANAGE_ACTION 0

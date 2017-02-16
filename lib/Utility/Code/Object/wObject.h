@@ -2,7 +2,7 @@
 #define __W_OBJECT_H__
 
 #include "../LoadDataXML.h"
-#include "../UI/AdvanceUI/ActionCommand.h"
+#include "../UI/ActionCommand.h"
 #include "cocostudio/CocoStudio.h"
 
 #include "cocos2d.h"
