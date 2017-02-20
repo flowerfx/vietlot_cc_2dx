@@ -1,13 +1,11 @@
 <?xml version ='1.0' encoding='UTF-8'?>
 <GAME>
 	<list_menu_widget name="loading">
-		<UIWidget id="1"  name="loading_screen"  		path="xml\Menu\LoadingMenu.xml"/>
+		<UIWidget id="1"  name="loading_menu"  		path="xml\Menu\LoadingMenu.xml"/>
 	</list_menu_widget>
 	
 	<list_menu_widget name="state_0">
-		<UIWidget id="14" name="common_screen" 			path="xml\Menu\CommonMenu.xml"/>
-		<UIWidget id="3"  name="login_screen" 			path="xml\Menu\LoginScreen.xml"/>
-		<UIWidget id="15" name="dialog_screen" 		path="xml\Menu\DialogScreen.xml"/>
+		<UIWidget id="2" name="common_menu" 			path="xml\Menu\CommonMenu.xml"/>
 	</list_menu_widget>
 	
 	

@@ -96,8 +96,7 @@
       </Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-xcopy "$(ProjectDir)..\iwin\Resources" "$(OutDir)" /D /E /I /F /Y
+      <Command>xcopy "$(ProjectDir)..\vietlot\Resources" "$(OutDir)" /D /E /I /F /Y
 xcopy "$(Configuration).win32\*.dll" "$(OutDir)" /D /Y</Command>
     </PreBuildEvent>
     <PreBuildEvent>
@@ -137,8 +136,8 @@ xcopy "$(Configuration).win32\*.dll" "$(OutDir)" /D /Y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
-xcopy "$(ProjectDir)..\iwin\Resources" "$(OutDir)" /D /E /I /F /Y
-xcopy "$(SolutionDir)$(Configuration).win32\*.dll" "$(OutDir)" /D /Y</Command>
+xcopy "$(ProjectDir)..\vietlot\Resources" "$(OutDir)" /D /E /I /F /Y
+xcopy "$(Configuration).win32\*.dll" "$(OutDir)" /D /Y</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Copy files</Message>

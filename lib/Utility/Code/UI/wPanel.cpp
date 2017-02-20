@@ -72,7 +72,6 @@ namespace Utility
 				{
 					cap_insert = XMLMgr->ConvertToRect(cap);
 				}
-
 			}
 			if (p_isScale9Enable)
 			{

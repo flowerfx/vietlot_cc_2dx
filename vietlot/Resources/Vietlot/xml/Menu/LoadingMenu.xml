@@ -15,13 +15,14 @@
 				
 				<Widget id="0" typeRes="panel" name = "background_texture" 		idx_appear ="1">				
 					<common_value>
-						<common 		name="source" 		value="dark_blue_tex.png"/>
-						<common			name="stick_screen"	value="1"/>
-						<common			name="scale9"		value="1"/>
-						<common			name="anchor_point"	value="0_0"/>
+						<common 		name="source" 			value="dark_blue_tex.9.png"/>
+						<common			name="stick_screen"		value="1"/>
+						<common			name="scale_9"			value="1"/>
+						<common			name="use_nine_path"	value="1"/>
+						<common			name="anchor_point"		value="0_0"/>
 					</common_value>
 					<pos 		origin = "0_0" 	/>
-					<size 		origin = "960_540" 	/>
+					<size 		origin = "540_960" 	/>
 				</Widget>
 				
 				
@@ -29,11 +30,11 @@
 					<common_value>
 						<common 		name="source" 		value="logo.png"/>
 					</common_value>
-					<pos 		origin = "270_540" 	/>
+					<pos 		origin = "270_480" 	/>
 					<size 		origin = "320_84" 	/>
 				</Widget>			
 				
-				<pos 		origin = "270_540" 	/>
+				<pos 		origin = "270_480" 	/>
 				<size 		origin = "540_960" 	/>	
 			</Widget>
 			

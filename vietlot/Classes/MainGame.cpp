@@ -19,7 +19,8 @@ MainGame * MainGame::p_Instance = NULL;
 MainGame::MainGame()
 {
 	this->retain();
-	_MenuMgr = nullptr;
+	_MenuMgr = new MenuManager();
+	_loadingStep = 0;
 }
 
 
@@ -36,7 +37,7 @@ bool MainGame::init()
 	//
 	Utility::InitSizeGame();
 	//
-    InitTheGame(0.0f);
+    InitTheGame(0.f);
 	//
 	this->scheduleUpdate();
 	//
@@ -85,7 +86,7 @@ bool MainGame::InitTheGame(float dt)
 		//load save file
 	//	File::SaveMgr->LoadTheGameSave(SAVE_NAME);
 		//load texture
-		XMLMgr->OnLoadXMLData<Utility::xml::LoadDataXML>("texture_atlas", 
+		XMLMgr->OnLoadXMLData<Utility::xml::LoadDataXML>("texture", 
 			std::mem_fn(&Utility::xml::LoadDataXML::OnLoadTextureAtlasDecXML), XMLMgr);
 		//load template
 		XMLMgr->OnLoadXMLData<Utility::xml::LoadDataXML>("TemplateDec",
@@ -98,7 +99,6 @@ bool MainGame::InitTheGame(float dt)
 		TextureMgr->LoadFont();
 		SocialMgr->Init();
 
-		_MenuMgr = new MenuManager();
 		_MenuMgr->Init();
 
 		RKString set_load = "loading";
@@ -128,7 +128,6 @@ bool MainGame::InitTheGame(float dt)
 			return false;
 		}
 	}
-
 	return true;
 }
 
@@ -154,8 +153,10 @@ void MainGame::update(float dt)
 
 	if(_loadingStep >= 1)
 	{	
-
-	//	ScrMgr->Update(dt);
+		if (_MenuMgr)
+		{
+			_MenuMgr->Update(dt);
+		}
 		/*if (!_profile_font->getParent())
 			getParent()->addChild(_profile_font, 9999)*/;
 		//_profile_font->setText(GetProfiler()->getResult());

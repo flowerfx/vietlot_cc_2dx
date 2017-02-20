@@ -44,8 +44,8 @@ int	LoadingMenu::InitComponent()
 void LoadingMenu::LoadXMLFile()
 {
 	PWARN1("THREAD : LOAD SOUND");
-	XMLMgr->OnLoadXMLData1("sound_dec", [&](TiXmlDocument * objectXMl) {
-		XMLMgr->OnLoadListSoundDecXML(objectXMl); });
+	/*XMLMgr->OnLoadXMLData1("sound_dec", [&](TiXmlDocument * objectXMl) {
+		XMLMgr->OnLoadListSoundDecXML(objectXMl); });*/
 
     PWARN1("THREAD : LOAD LANGUAGE");
     //set language

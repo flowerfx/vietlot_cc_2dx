@@ -145,7 +145,7 @@ namespace Utility
 
 				p_gLocalPath = convertPathFormatToUnixStyle(utf8ExeDir);
 			}
-			p_gInstallPath = RKFile_GetBundlePath();
+			p_gInstallPath = p_gLocalPath;
 #else
 
                 p_gLocalPath = "";
@@ -175,11 +175,13 @@ namespace Utility
 		{
             auto npath = RecorrectNamePath(namepath);
 			RKString finalPath = RKString(p_gInstallPath) + DataDir() + npath;
+			FILE * fp = nullptr;
 #if defined(OS_ANDROID_)
-			return android_fopen(finalPath.GetString(), sub.GetString());
+			fp =  android_fopen(finalPath.GetString(), sub.GetString());
 #else
-			return fopen(finalPath.GetString(), sub.GetString());
+			fp =  fopen(finalPath.GetString(), sub.GetString());
 #endif
+			return fp;
 		}
 
 		const RKString ResolveNamePath(const RKString & namepath)

@@ -1868,7 +1868,7 @@ namespace Utility
 												font_dec->d_width_border = atof(default_value->Attribute("borderwdx"));
 											}
 
-											RKString color = default_value->Attribute("Color");
+											RKString color = default_value->Attribute("color");
 
 											auto val_slipt = color.Split("_");
 											font_dec->d_color[0] = atoi(val_slipt[0].GetString());

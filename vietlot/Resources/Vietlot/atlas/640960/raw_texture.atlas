@@ -1,0 +1,105 @@
+
+raw_texture.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+btn_common
+  rotate: false
+  xy: 459, 481
+  size: 26, 28
+  split: 8, 9, 9, 9
+  pad: 0, 0, 0, 0
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+btn_common_disable
+  rotate: false
+  xy: 425, 73
+  size: 26, 28
+  split: 11, 14, 12, 15
+  pad: 9, 9, 11, 10
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+dark_blue_tex
+  rotate: false
+  xy: 323, 163
+  size: 18, 18
+  split: 6, 6, 6, 6
+  pad: 0, 0, 0, 0
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
+ico_options
+  rotate: false
+  xy: 1, 71
+  size: 47, 24
+  orig: 47, 24
+  offset: 0, 0
+  index: -1
+list_item_df
+  rotate: false
+  xy: 1, 63
+  size: 5, 6
+  split: 0, 0, 1, 2
+  orig: 5, 6
+  offset: 0, 0
+  index: -1
+list_item_selected
+  rotate: false
+  xy: 50, 89
+  size: 5, 6
+  split: 0, 0, 1, 2
+  orig: 5, 6
+  offset: 0, 0
+  index: -1
+logo
+  rotate: false
+  xy: 1, 97
+  size: 320, 84
+  orig: 320, 84
+  offset: 0, 0
+  index: -1
+logo_chim
+  rotate: false
+  xy: 1, 183
+  size: 354, 326
+  orig: 354, 326
+  offset: 0, 0
+  index: -1
+number_blue
+  rotate: false
+  xy: 357, 409
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+number_orange
+  rotate: false
+  xy: 357, 307
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+number_red
+  rotate: false
+  xy: 357, 205
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+number_violet
+  rotate: false
+  xy: 357, 103
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+number_yeallow
+  rotate: false
+  xy: 323, 1
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1

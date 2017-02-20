@@ -5,7 +5,7 @@
 			<path value="xml\Language.xml"/>
 		</loader>
 		<loader id="1" name="texture">
-			<path value="xml\TexturePacker.xml"/>
+			<path value="xml\TextureAtlas.xml"/>
 		</loader>
 		
 		<loader id="2" name="TemplateDec">

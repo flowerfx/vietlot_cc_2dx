@@ -32,7 +32,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if(!glview) {
 #if defined _WIN32_
-		glview = GLViewImpl::createWithRect("Vietlot", Rect(0, 0, 1280, 800));
+		glview = GLViewImpl::createWithRect("Vietlot", Rect(0, 0, 540, 960));
 #else
         glview = GLViewImpl::create("Vietlot");
 #endif
