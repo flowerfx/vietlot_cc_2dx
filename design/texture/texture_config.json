@@ -1,0 +1,16 @@
+{
+  "inputFoder": "e:/ProjGame/iWinCocos2d/cc_iw_game/trunk/iWinOnline-cocos2dx/gui/",
+  "outputFoder": "e:/ProjGame/iWinCocos2d/cc_iw_game/trunk/iWinOnline-cocos2dx/gui_out/",
+  "screenSizes": [
+    "640960"
+  ],
+   "packFolders": [
+    "background"
+  ],
+    "screenSizes_optimize": [
+    "640960"
+  ],
+   "optimize_colors": [
+    "256", "256", "256"
+  ]
+}
