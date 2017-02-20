@@ -7,7 +7,7 @@
     ],
     "copy_resources": [
         {
-            "from": "../iwin/Resources",
+            "from": "../vietlot/Resources",
             "to": ""
         }
     ]

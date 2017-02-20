@@ -349,21 +349,21 @@ namespace Utility
 		int numberMinute = timePlay / 60;
 		if (numberMinute < 10)
 		{
-			minute = "0" + std::to_string(numberMinute);
+			minute = "0" + StringUtils::format("%d", numberMinute);
 		}
 		else
 		{
-			minute = std::to_string(numberMinute);
+			minute = StringUtils::format("%d", numberMinute);
 		}
 
 		int numberSecond = timePlay % 60;
 		if (numberSecond < 10)
 		{
-			sec = "0" + std::to_string(numberSecond);
+			sec = "0" + StringUtils::format("%d", numberSecond);//std::to_string(numberSecond);
 		}
 		else
 		{
-			sec = std::to_string(numberSecond);
+			sec = StringUtils::format("%d", numberSecond); //std::to_string(numberSecond);
 		}
 
 		return (minute + std::string(":") + sec);

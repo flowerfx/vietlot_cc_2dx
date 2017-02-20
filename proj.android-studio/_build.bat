@@ -6,6 +6,6 @@
 
 cls
 
- xcopy .\..\iwin\Classes .\app\jni\Classes\ /Y/S
+ xcopy .\..\vietlot\Classes .\app\jni\Classes\ /Y/S
 
 cocos compile -m release -p android --android-studio --app-abi armeabi-v7a
