@@ -4,7 +4,7 @@
 #include "cocos2d.h"
 #include "DisplayView.h"
 #include "SoundManager.h"
-
+#define USE_FAKE_DATA
 class MainGame : public cocos2d::Layer
 {
 private:
