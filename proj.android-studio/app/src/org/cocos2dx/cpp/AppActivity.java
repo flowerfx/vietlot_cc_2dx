@@ -29,9 +29,9 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+//import android.support.annotation.NonNull;
+//import android.support.v4.app.ActivityCompat;
+//import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 
@@ -45,7 +45,7 @@ import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.sdkbox.plugin.SDKBox;
+//import com.sdkbox.plugin.SDKBox;
 
 import iwin.vn.full.R;
 
@@ -74,7 +74,7 @@ public class AppActivity extends Cocos2dxActivity{
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SDKBox.init(this);
+    //    SDKBox.init(this);
         AndroidPlatform.setActivity(this);
         IwinIapHelper.init(this);
 
@@ -86,7 +86,7 @@ public class AppActivity extends Cocos2dxActivity{
             loader_dialog.getWindow().getDecorView().setSystemUiVisibility(mSystemUiVisibility);
         }
         loader_dialog.show();
-
+/*
         if (gameHelper == null) {
             gameHelper = new GameHelper(this, GameHelper.CLIENT_GAMES);
             gameHelper.enableDebugLog(true);
@@ -122,7 +122,8 @@ public class AppActivity extends Cocos2dxActivity{
             gameHelper.setup(gameHelperListener);
             gameHelper.setConnectOnStart(false);
         }
-    }
+*/  
+   }
 
     public static void dismissLoader() {
         if (loader_dialog != null) {
@@ -132,51 +133,52 @@ public class AppActivity extends Cocos2dxActivity{
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(!SDKBox.onActivityResult(requestCode, resultCode, data)  && !IwinIapHelper.onActivityResult(requestCode, resultCode, data))
-        {
+     //   if(!SDKBox.onActivityResult(requestCode, resultCode, data)  && !IwinIapHelper.onActivityResult(requestCode, resultCode, data))
+     //   {
             super.onActivityResult(requestCode, resultCode, data);
-        }
-        gameHelper.onActivityResult(requestCode, resultCode, data);
+    //   }
+     //   gameHelper.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
     protected void onStart(){
         super.onStart();
-        SDKBox.onStart();
+    //    SDKBox.onStart();
     }
 
     @Override
     protected void onStop(){
         super.onStop();
-        SDKBox.onStop();
+    //    SDKBox.onStop();
     }
 
     @Override
     protected void onResume(){
         super.onResume();
-        SDKBox.onResume();
+    //    SDKBox.onResume();
     }
 
     @Override
     protected void onPause(){
         super.onPause();
-        SDKBox.onPause();
+    //    SDKBox.onPause();
     }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
-        IwinIapHelper.onDestroy();
+    //    IwinIapHelper.onDestroy();
     }
 
     @Override
     public void onBackPressed(){
-        if(!SDKBox.onBackPressed()){
-            super.onBackPressed();
-        }
+    //    if(!SDKBox.onBackPressed()){
+    //        super.onBackPressed();
+    //    }
 
     }
 
+	
     public void logInGGS() {
         try {
             // Here, thisActivity is the current activity
@@ -264,4 +266,5 @@ public class AppActivity extends Cocos2dxActivity{
     public void inItGGS() {
         gameHelper.setConnectOnStart(true);
     }
+	
 }

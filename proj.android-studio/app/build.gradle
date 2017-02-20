@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion '25.0.1'
+    buildToolsVersion '24.0.1'
     defaultConfig {
         applicationId "iwin.vn.full"
         minSdkVersion 9
@@ -59,6 +59,7 @@ configurations {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':libcocos2dx')
-    compile project(':facebook_lib')
+    //compile project(':facebook_lib')
     compile project(':gps')
+    compile 'com.android.support:support-v4:24.0.1'
 }
