@@ -1,0 +1,132 @@
+<GAME>
+	<texture>
+		<texture_atlas id="0" fit_size="960_640" range_size_x="10_-1"><!-- 880_-1 -->
+
+			<tex id="0" name="atlas_GUI" 		endfix=".png">
+				<path id="0" atlas_path="atlas\640960\background.atlas" 	name="background/" 		global_path="atlas\640960\"/>
+			</tex>	
+			
+			<tex id="1" name="frame_sheet">
+				<path id="0" tex_path="frame-sheet\640960\fx_particle_saowin.png" name="sao_win">
+					<texture id="0"	name="sao_win">
+						<common name="begin" 		value="0_0"/>
+						<common	name="end"	 		value="-1_-1"/>
+						<common	name="slice" 		value="5_6"/>
+						<common name="end_idx" 		value="29"/>
+						<common name="begin_idx" 	value="0"/>
+						<common name="sprite_idx" 	value="0"/>
+					</texture>
+				</path>
+				<path id="1" tex_path="frame-sheet\640960\ico_nhat.png" name="ico_nhat">
+					<texture id="0"	name="ico_nhat">
+						<common name="begin" 		value="0_0"/>
+						<common	name="end"	 		value="-1_-1"/>
+						<common	name="slice" 		value="5_6"/>
+						<common name="end_idx" 		value="26"/>
+						<common name="begin_idx" 	value="0"/>
+						<common name="sprite_idx" 	value="26"/>						
+					</texture>
+				</path>
+				<path id="2" tex_path="frame-sheet\640960\ico_nhi.png" 	name="ico_nhi">
+					<texture id="0"	name="ico_nhi">
+						<common name="begin" 		value="0_0"/>
+						<common	name="end"	 		value="-1_-1"/>
+						<common	name="slice" 		value="5_6"/>
+						<common name="end_idx" 		value="26"/>
+						<common name="begin_idx" 	value="0"/>
+						<common name="sprite_idx" 	value="26"/>						
+					</texture>
+				</path>
+				<path id="3" tex_path="frame-sheet\640960\ico_ba.png" 	name="ico_ba">
+					<texture id="0"	name="ico_ba">
+						<common name="begin" 		value="0_0"/>
+						<common	name="end"	 		value="-1_-1"/>
+						<common	name="slice" 		value="5_6"/>
+						<common name="end_idx" 		value="25"/>
+						<common name="begin_idx" 	value="0"/>
+						<common name="sprite_idx" 	value="25"/>						
+					</texture>
+				</path>
+				<path id="4" tex_path="frame-sheet\640960\ico_bon.png" 	name="ico_tu">
+					<texture id="0"	name="ico_tu">
+						<common name="begin" 		value="0_0"/>
+						<common	name="end"	 		value="-1_-1"/>
+						<common	name="slice" 		value="5_6"/>
+						<common name="end_idx" 		value="26"/>
+						<common name="begin_idx" 	value="0"/>
+						<common name="sprite_idx" 	value="26"/>
+					</texture>
+				</path>
+			</tex>
+			<font>
+				<fontdetail id="0" namepath="fonts\default.ttf" name="def">
+					<default size="30" color="255_255_255_255" borderwdx="0" unicode="1"/>
+				</fontdetail>
+				<fontdetail id="1" namepath="fonts\HelveticaNeue-Regular.ttf" name="hel">
+					<default size="30" color="255_255_255_255" borderwdx="0" unicode="1"/>
+				</fontdetail>
+				
+				<fontdetail id="0" 	namepath="fonts\640960\default.fnt" 			name="def_bitmap">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="1" 	namepath="fonts\640960\defaultemoticon.fnt" 	name="defaultemoticon">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="2" 	namepath="fonts\640960\hel_def.fnt" 			name="def_hel">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="3" 	namepath="fonts\640960\xanhla.fnt" 				name="xanhla">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="4" 	namepath="fonts\640960\trang.fnt" 				name="trang">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="5" 	namepath="fonts\640960\titleFont.fnt" 			name="titleFont">
+					<default size="36" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="6" 	namepath="fonts\640960\timeFont.fnt" 			name="timeFont">
+					<default size="76" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="7" 	namepath="fonts\640960\small.fnt" 				name="small">
+					<default size="18" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="8" 	namepath="fonts\640960\numberFont.fnt" 			name="numberFont">
+					<default size="100" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="9" 	namepath="fonts\640960\medium.fnt" 				name="medium">
+					<default size="22" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="10" namepath="fonts\640960\emotions.fnt" 			name="emotions">
+					<default size="29" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="11" namepath="fonts\640960\defaultBold.fnt" 		name="defaultBold">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="12" namepath="fonts\640960\cam.fnt" 				name="cam">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="13" namepath="fonts\640960\boderFont.fnt" 			name="boderFont">
+					<default size="18" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="14" namepath="fonts\640960\font_thang.fnt" 			name="fontthang">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>		
+				<fontdetail id="15" namepath="fonts\640960\font_thua.fnt" 			name="fontthua">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>		
+				<fontdetail id="16" namepath="fonts\640960\font_hoa.fnt" 			name="fonthoa">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="17" namepath="fonts\640960\font_nohu.fnt" 			name="font_nohu">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="18" namepath="fonts\640960\font_nohu_lon.fnt" 		name="font_nohu_lon">
+					<default size="90" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+				<fontdetail id="19" namepath="fonts\640960\font_nohu_xanh.fnt" 		name="font_nohu_xanh">
+					<default size="30" color="255_255_255_255" bitmap="1"/>
+				</fontdetail>
+			</font>
+		</texture_atlas>
+	</texture>
+</GAME>

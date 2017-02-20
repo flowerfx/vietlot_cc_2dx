@@ -14,6 +14,23 @@ typedef int						s32;
 typedef unsigned long long		u64;
 typedef long long			    s64;
 
+#undef SAFE_DELETE  
+#define SAFE_DELETE(p)         if(p) { delete (p); (p) = nullptr; }
+
+#undef SAFE_DELETE_ARRAY    
+#define SAFE_DELETE_ARRAY(p)   if(p) { delete[] (p); (p) = nullptr; }
+
+#undef SAFE_DELETE_VECTOR
+#define SAFE_DELETE_VECTOR(v ) \
+for(auto p : v) { \
+	delete p ; \
+} v.clear(); 
+
+#define SAFE_DELETE_MAP(v ) \
+for(auto p : v) { \
+	delete p.second ; \
+} v.clear(); 
+
 namespace Utils
 {
 	//convert date time

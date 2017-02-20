@@ -1,0 +1,18 @@
+<?xml version ='1.0' encoding='UTF-8'?>
+<GAME>
+	<list_loader>
+		<loader id="0" name="language">
+			<path value="xml\Language.xml"/>
+		</loader>
+		<loader id="1" name="texture">
+			<path value="xml\TexturePacker.xml"/>
+		</loader>
+		
+		<loader id="2" name="TemplateDec">
+			<path value="xml\TemplateDec.xml"/>
+		</loader>
+		<loader id="3" name="WidgetComDec">
+			<path value="xml\WidgetDec.xml"/>
+		</loader>
+	</list_loader>
+</GAME>
