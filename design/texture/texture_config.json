@@ -1,6 +1,6 @@
 {
-  "inputFoder":  "e:/ProjGame/vietlot_analyze/vietlot_cc_2dx/design/texture/",
-  "outputFoder": "e:/ProjGame/vietlot_analyze/vietlot_cc_2dx/design/texture/atlas/",
+  "inputFoder":  "./",
+  "outputFoder": "../../vietlot/Resources/Vietlot/atlas/",
   "screenSizes": [
     "640960"
   ],
