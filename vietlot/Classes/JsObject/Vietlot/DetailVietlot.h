@@ -6,22 +6,22 @@ namespace jsmessage
 	class DetailVietlot : public JsObject
 	{
 		//id number 
-		CC_SYNTHESIZE(s32, id, ID)
+			CC_SYNTHESIZE_PASS_BY_REF(s32, id, ID)
 		//string date
-		CC_SYNTHESIZE(std::string, date, Date)
+			CC_SYNTHESIZE_PASS_BY_REF(std::string, date, Date)
 		//detail date
-		CC_SYNTHESIZE(u32, day, Day)
-		CC_SYNTHESIZE(u32, month, Month)
-		CC_SYNTHESIZE(u32, year, Year)
+			CC_SYNTHESIZE_PASS_BY_REF(u32, day, Day)
+			CC_SYNTHESIZE_PASS_BY_REF(u32, month, Month)
+			CC_SYNTHESIZE_PASS_BY_REF(u32, year, Year)
 		//string number
-		CC_SYNTHESIZE(std::string, number, Number)
+			CC_SYNTHESIZE_PASS_BY_REF(std::string, number, Number)
 		//detail number
-		CC_SYNTHESIZE(std::vector<u32>, listNumber, ListNumber)
+			CC_SYNTHESIZE_PASS_BY_REF(std::vector<u32>, listNumber, ListNumber)
 		//result
-		CC_SYNTHESIZE(u32, result0, Result0) //jackpot
-		CC_SYNTHESIZE(u32, result1, Result1) //nhat
-		CC_SYNTHESIZE(u32, result2, Result2) //nhi
-		CC_SYNTHESIZE(u32, result3, Result3) //ba
+			CC_SYNTHESIZE_PASS_BY_REF(u32, result0, Result0) //jackpot
+			CC_SYNTHESIZE_PASS_BY_REF(u32, result1, Result1) //nhat
+			CC_SYNTHESIZE_PASS_BY_REF(u32, result2, Result2) //nhi
+			CC_SYNTHESIZE_PASS_BY_REF(u32, result3, Result3) //ba
 	public:
 		
 		DetailVietlot();

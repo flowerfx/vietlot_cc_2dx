@@ -51,26 +51,37 @@ namespace jsmessage
 
 	void DetailVietlot::toData(rapidjson::Document & document)
 	{
-		if(document.HasMember("code"))
+		if(document.HasMember("id"))
 		{
-			setCode(document["code"].GetString());
+			setID(document["id"].GetUint());
 		}
 
-		if(document.HasMember("type"))
+		if(document.HasMember("date"))
 		{
-			setType(document["type"].GetInt());
+			setDate(document["date"].GetString());
 		}
 
-		if(document.HasMember("purpose"))
+		if(document.HasMember("number"))
 		{
-			setPurpose(document["purpose"].GetInt());
+			setNumber(document["number"].GetString());
 		}
 
-		if(document.HasMember("trustDevice"))
+		if(document.HasMember("result0"))
 		{
-			setTrustDevice(document["trustDevice"].GetInt());
+			setResult0(document["result0"].GetUint());
 		}
-
+		if (document.HasMember("result1"))
+		{
+			setResult1(document["result1"].GetUint());
+		}
+		if (document.HasMember("result2"))
+		{
+			setResult2(document["result2"].GetUint());
+		}
+		if (document.HasMember("result3"))
+		{
+			setResult3(document["result3"].GetUint());
+		}
 
 	}
 }

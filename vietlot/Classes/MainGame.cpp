@@ -70,13 +70,8 @@ bool MainGame::InitTheGame(float dt)
 		//
 		InputMgr->init();
 
-#if defined WP8 || defined OS_W8
-		DataDir("/iWin/");
-#elif defined OS_W10
-		DataDir("/iWin/");
-#else
-		DataDir("iWin/");
-#endif
+		DataDir("Vietlot/");
+
         //Director::getInstance()->InitModuleRKFile();
 		InitValue();
 		XMLMgr->OnLoaderXML();
@@ -85,7 +80,7 @@ bool MainGame::InitTheGame(float dt)
 			std::mem_fn(&Utility::xml::LoadDataXML::OnLoadListLangXML), XMLMgr);
         
 		//load save file
-		File::SaveMgr->LoadTheGameSave(SAVE_NAME);
+	//	File::SaveMgr->LoadTheGameSave(SAVE_NAME);
 		//load texture
 		XMLMgr->OnLoadXMLData<Utility::xml::LoadDataXML>("texture_atlas", 
 			std::mem_fn(&Utility::xml::LoadDataXML::OnLoadTextureAtlasDecXML), XMLMgr);
@@ -93,15 +88,11 @@ bool MainGame::InitTheGame(float dt)
 		XMLMgr->OnLoadXMLData<Utility::xml::LoadDataXML>("TemplateDec",
 			std::mem_fn(&Utility::xml::LoadDataXML::OnLoadWidgetTemplateDecXML), XMLMgr);
 		//load widget com dec
-		//load template
 		XMLMgr->OnLoadXMLData<Utility::xml::LoadDataXML>("WidgetComDec",
 			std::mem_fn(&Utility::xml::LoadDataXML::OnLoadUIWidgetComXML), XMLMgr);
 
 		TextureMgr->LoadTextureAtlas("atlas_GUI");
-		TextureMgr->LoadTextureAtlas("atlas_Init");
-		TextureMgr->LoadTextureFrame("frame_sheet");
 		TextureMgr->LoadFont();
-
 		SocialMgr->Init();
 
 		//ScrMgr->Init();

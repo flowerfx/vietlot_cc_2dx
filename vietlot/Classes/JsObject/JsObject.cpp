@@ -21,7 +21,7 @@ namespace jsmessage
 		document.Accept(writer);
 	}
 
-	void JsObject::toData(const std::string & json)
+	void JsObject::toDataStr(const std::string & json)
 	{
 		rapidjson::Document document;
 		document.Parse(json.c_str());

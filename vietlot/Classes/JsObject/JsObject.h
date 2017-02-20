@@ -18,8 +18,9 @@ namespace jsmessage
 		JsObject();
 		virtual ~JsObject();
 		virtual rapidjson::Document toJson() = 0;
-		virtual void toData(const std::string & json);
 		virtual void toData(rapidjson::Document & json) = 0;
+
+		virtual void toDataStr(const std::string & json);
 	};
 }
 #endif//__JSON_OBJECT_H__
