@@ -146,13 +146,19 @@ xcopy "$(SolutionDir)$(Configuration).win32\*.dll" "$(OutDir)" /D /Y</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\vietlot\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\vietlot\Classes\JsObject\JsObject.cpp" />
+    <ClCompile Include="..\vietlot\Classes\JsObject\Vietlot\DetailVietlot.cpp" />
     <ClCompile Include="..\vietlot\Classes\MainGame.cpp" />
+    <ClCompile Include="..\vietlot\Classes\Utils.cpp" />
     <ClCompile Include="win32\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\vietlot\Classes\AppDelegate.h" />
     <ClInclude Include="..\vietlot\Classes\AppMacros.h" />
+    <ClInclude Include="..\vietlot\Classes\JsObject\JsObject.h" />
+    <ClInclude Include="..\vietlot\Classes\JsObject\Vietlot\DetailVietlot.h" />
     <ClInclude Include="..\vietlot\Classes\MainGame.h" />
+    <ClInclude Include="..\vietlot\Classes\Utils.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="win32\main.h" />
   </ItemGroup>
