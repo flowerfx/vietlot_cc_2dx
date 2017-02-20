@@ -1,0 +1,44 @@
+<?xml version ='1.0' encoding='UTF-8'?>
+<GAME>
+	<MenuWidget name="loading_menu" 	designSize="540_960">
+			<fade_process max_idx_first="0">
+				<sound_click value="SFX_CLICK_4" delayTime="0.1" loop ="1"/>
+				<time_process id="0" val="1.5">
+					<sound FadeIn="SFX_APPEAR_1" FadeOut="" delayTime="0.125" loop ="1"/>
+				</time_process>
+			</fade_process>	
+			
+			<Widget id="0" typeRes="layer_widget" name="loading_screen" idx_appear ="0">
+				<common_value>
+					<common			name="stick_screen"		value="1"/>
+				</common_value>
+				
+				<Widget id="0" typeRes="panel" name = "background_texture" 		idx_appear ="1">				
+					<common_value>
+						<common 		name="source" 		value="dark_blue_tex.png"/>
+						<common			name="stick_screen"	value="1"/>
+						<common			name="scale9"		value="1"/>
+						<common			name="anchor_point"	value="0_0"/>
+					</common_value>
+					<pos 		origin = "0_0" 	/>
+					<size 		origin = "960_540" 	/>
+				</Widget>
+				
+				
+				<Widget id="0" typeRes="panel" 	name = "panel_logo" idx_appear ="1">		
+					<common_value>
+						<common 		name="source" 		value="logo.png"/>
+					</common_value>
+					<pos 		origin = "270_540" 	/>
+					<size 		origin = "320_84" 	/>
+				</Widget>			
+				
+				<pos 		origin = "270_540" 	/>
+				<size 		origin = "540_960" 	/>	
+			</Widget>
+			
+			
+				
+			
+	</MenuWidget>
+</GAME>

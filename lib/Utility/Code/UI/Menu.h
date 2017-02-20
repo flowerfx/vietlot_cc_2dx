@@ -10,7 +10,7 @@ namespace Utility
 {
 	namespace UI_Widget
 	{
-		class Screen;
+		class MenuEntity;
         class WidgetEntity;
 		//
 		struct UIDecs

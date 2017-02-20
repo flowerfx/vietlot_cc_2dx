@@ -148,7 +148,11 @@ xcopy "$(SolutionDir)$(Configuration).win32\*.dll" "$(OutDir)" /D /Y</Command>
     <ClCompile Include="..\vietlot\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\vietlot\Classes\JsObject\JsObject.cpp" />
     <ClCompile Include="..\vietlot\Classes\JsObject\Vietlot\DetailVietlot.cpp" />
+    <ClCompile Include="..\vietlot\Classes\JsObject\Vietlot\ListVietlot.cpp" />
     <ClCompile Include="..\vietlot\Classes\MainGame.cpp" />
+    <ClCompile Include="..\vietlot\Classes\Menu\BaseMenu.cpp" />
+    <ClCompile Include="..\vietlot\Classes\Menu\LoadingMenu.cpp" />
+    <ClCompile Include="..\vietlot\Classes\Menu\MenuManager.cpp" />
     <ClCompile Include="..\vietlot\Classes\Utils.cpp" />
     <ClCompile Include="win32\main.cpp" />
   </ItemGroup>
@@ -157,7 +161,11 @@ xcopy "$(SolutionDir)$(Configuration).win32\*.dll" "$(OutDir)" /D /Y</Command>
     <ClInclude Include="..\vietlot\Classes\AppMacros.h" />
     <ClInclude Include="..\vietlot\Classes\JsObject\JsObject.h" />
     <ClInclude Include="..\vietlot\Classes\JsObject\Vietlot\DetailVietlot.h" />
+    <ClInclude Include="..\vietlot\Classes\JsObject\Vietlot\ListVietlot.h" />
     <ClInclude Include="..\vietlot\Classes\MainGame.h" />
+    <ClInclude Include="..\vietlot\Classes\Menu\BaseMenu.h" />
+    <ClInclude Include="..\vietlot\Classes\Menu\LoadingMenu.h" />
+    <ClInclude Include="..\vietlot\Classes\Menu\MenuManager.h" />
     <ClInclude Include="..\vietlot\Classes\Utils.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="win32\main.h" />

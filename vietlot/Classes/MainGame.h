@@ -5,13 +5,16 @@
 #include "DisplayView.h"
 #include "SoundManager.h"
 #define USE_FAKE_DATA
+class MenuManager;
 class MainGame : public cocos2d::Layer
 {
 private:
 	static MainGame * p_Instance;
 
+	MenuManager * _MenuMgr;
+
 	bool	_IsInitialized;
-	int		_loadingStep;  
+	int		_loadingStep;
 public:
 	// implement the "static node()" method manually
 	CREATE_FUNC(MainGame);
@@ -46,8 +49,11 @@ public:
 		d->runWithScene(MainGame::scene());
 	}
 
+	MenuManager * GetMenuMgr() { return _MenuMgr; }
+
 };
 
 #define GameMgr MainGame::GetInstance()
+#define MenuMgr GameMgr->GetMenuMgr()
 
 #endif //__MAIN_GAME_H__

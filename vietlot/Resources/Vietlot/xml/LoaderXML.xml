@@ -14,5 +14,9 @@
 		<loader id="3" name="WidgetComDec">
 			<path value="xml\WidgetDec.xml"/>
 		</loader>
+		
+		<loader id="4" name="UIWidget_table">
+			<path value="xml\MenuUIWidget_table.xml"/>
+		</loader>
 	</list_loader>
 </GAME>

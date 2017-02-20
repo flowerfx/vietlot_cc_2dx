@@ -32,11 +32,11 @@ namespace jsmessage
 		document.AddMember("id", id, locator);
 
 		rapidjson::Value vdate(date.c_str(), date.size());
-		document.AddMember("date", date,locator);
+		document.AddMember("date", vdate,locator);
 		Utils::convertToDate(date, day, month, year);
 
 		rapidjson::Value vnumber(number.c_str(), number.size());
-		document.AddMember("number", number, locator);
+		document.AddMember("number", vnumber, locator);
 
 		listNumber = Utils::convertToListNumber(number);
 

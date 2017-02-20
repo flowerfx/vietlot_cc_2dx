@@ -1,11 +1,11 @@
 {
-  "inputFoder": "e:/ProjGame/iWinCocos2d/cc_iw_game/trunk/iWinOnline-cocos2dx/gui/",
-  "outputFoder": "e:/ProjGame/iWinCocos2d/cc_iw_game/trunk/iWinOnline-cocos2dx/gui_out/",
+  "inputFoder":  "e:/ProjGame/vietlot_analyze/vietlot_cc_2dx/design/texture/",
+  "outputFoder": "e:/ProjGame/vietlot_analyze/vietlot_cc_2dx/design/texture/atlas/",
   "screenSizes": [
     "640960"
   ],
    "packFolders": [
-    "background"
+    "raw_texture"
   ],
     "screenSizes_optimize": [
     "640960"

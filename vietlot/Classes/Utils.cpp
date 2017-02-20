@@ -49,7 +49,7 @@ namespace Utils
 
 	u32 getDayWeek(const u32 & day, const u32 & month, const u32 & year)
 	{
-
+		return 1;
 	}
 
 	//

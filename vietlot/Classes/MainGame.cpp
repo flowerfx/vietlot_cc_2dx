@@ -1,5 +1,5 @@
 ﻿#include "MainGame.h"
-
+#include "Menu/MenuManager.h"
 #include "InputManager.h"
 #if USE_CC_AUDIO
 #include "SoundManager.h"
@@ -19,11 +19,13 @@ MainGame * MainGame::p_Instance = NULL;
 MainGame::MainGame()
 {
 	this->retain();
+	_MenuMgr = nullptr;
 }
 
 
 MainGame::~MainGame()
 {
+	SAFE_DELETE(_MenuMgr);
 	//_profile_font->release();
 	this->autorelease();
 }
@@ -37,6 +39,7 @@ bool MainGame::init()
     InitTheGame(0.0f);
 	//
 	this->scheduleUpdate();
+	//
 	return true;
 }
 //virtual bool update();
@@ -61,7 +64,7 @@ bool MainGame::InitLoadingScreen()
 
 bool MainGame::InitTheGame(float dt)
 {
-	if (_loadingStep == -1)
+	if (_loadingStep == 0)
 	{
 
 #ifdef USE_ZIP
@@ -95,7 +98,8 @@ bool MainGame::InitTheGame(float dt)
 		TextureMgr->LoadFont();
 		SocialMgr->Init();
 
-		//ScrMgr->Init();
+		_MenuMgr = new MenuManager();
+		_MenuMgr->Init();
 
 		RKString set_load = "loading";
 		XMLMgr->OnLoadXMLData1("UIWidget_table",
@@ -103,21 +107,21 @@ bool MainGame::InitTheGame(float dt)
 		{
 			XMLMgr->OnLoadUIWidgetDecTableXML(objectXMl, set_load); 
 		});	
-		//ScrMgr->InitDetailScreen(1);
+		_MenuMgr->InitDetailScreen(MENU_LAYER::LOADING_MENU);
 		//
 		_loadingStep++;
 
-		//ScrMgr->SetStateLoading(p_loadingStep);
+		_MenuMgr->SetStateLoading(_loadingStep);
 		return false;
 	}
 	else
 	{
         //here to call dismiss Splash screen on android
         
-		//_loadingStep = ScrMgr->GetStateLoading();
+		_loadingStep = _MenuMgr->GetStateLoading();
         if(_loadingStep == 1)
         {
-            //ScrMgr->SwitchToMenu(LOADING_SCREEN);
+            _MenuMgr->SwitchToMenu(MENU_LAYER::LOADING_MENU);
         }
 		if (_loadingStep < 10)
 		{

@@ -1868,7 +1868,7 @@ namespace Utility
 												font_dec->d_width_border = atof(default_value->Attribute("borderwdx"));
 											}
 
-											RKString color = default_value->Attribute("color");
+											RKString color = default_value->Attribute("Color");
 
 											auto val_slipt = color.Split("_");
 											font_dec->d_color[0] = atoi(val_slipt[0].GetString());
@@ -2018,7 +2018,7 @@ namespace Utility
 												font_dec->d_width_border = atof(default_value->Attribute("borderwdx"));
 											}
 
-                                            RKString color = default_value->Attribute("color");
+                                            RKString color = default_value->Attribute("Color");
                                             
                                             auto val_slipt = color.Split("_");
                                             font_dec->d_color[0] = atoi(val_slipt[0].GetString());
@@ -2157,7 +2157,7 @@ namespace Utility
 						{
 							font_dec->d_size = atof(default_value->Attribute("size"));
 							font_dec->d_width_border = atof(default_value->Attribute("borderwdx"));
-							RKString color = default_value->Attribute("color");
+							RKString color = default_value->Attribute("Color");
 
 							auto val_slipt = color.Split("_");
 							font_dec->d_color[0] = atoi(val_slipt[0].GetString());
@@ -2405,7 +2405,7 @@ namespace Utility
 											}
 										}
 										//scale
-										random_child__ = _child_config_layer->FirstChildElement("Size");
+										random_child__ = _child_config_layer->FirstChildElement("size");
 										if (random_child__)
 										{
 											_layerData->p_IsScaleRandom = (atoi(random_child__->Attribute("random")) != 0);
@@ -2512,7 +2512,7 @@ namespace Utility
 										_layerData->p_list_layer_element_dec.insert(std::pair<RKString, BasicDec *>("Pos", __dec));
 									}
 									//get Size
-									_child_config_layer = _config_layer->FirstChildElement("Size");
+									_child_config_layer = _config_layer->FirstChildElement("size");
 									if (_child_config_layer)
 									{
 										BasicDec * __dec = GenerateBasicDec(_child_config_layer, "origin", "scale", "time", "loop", "delay", "delay_first", "type", "IsFade", NULL);
@@ -2530,7 +2530,7 @@ namespace Utility
 										__dec->ReplaceDataVector2("origin", origin_size__);
 										float origin_scale__ = __dec->GetDatafloat("scale") / designSize.x;
 										__dec->ReplaceDatafloat("scale", origin_scale__);
-										_layerData->p_list_layer_element_dec.insert(std::pair<RKString, BasicDec *>("Size", __dec));
+										_layerData->p_list_layer_element_dec.insert(std::pair<RKString, BasicDec *>("size", __dec));
 									}
 									//get Rotate
 									_child_config_layer = _config_layer->FirstChildElement("Rotate");
@@ -2699,7 +2699,7 @@ namespace Utility
 											}
 
 											//get size object
-											_child_element_object = _object->FirstChildElement("Size");
+											_child_element_object = _object->FirstChildElement("size");
 											if (_child_element_object)
 											{
 												Vec2 value = ConvertToVector2(_child_element_object->Attribute("value"));
@@ -2720,9 +2720,9 @@ namespace Utility
 											else
 											{
 												Vec2 value = Vec2(50, 50);
-												if (_layerData->p_list_layer_element_dec.find("Size") != _layerData->p_list_layer_element_dec.end())
+												if (_layerData->p_list_layer_element_dec.find("size") != _layerData->p_list_layer_element_dec.end())
 												{
-													value = _layerData->p_list_layer_element_dec.at("Size")->GetDataVector2("origin");
+													value = _layerData->p_list_layer_element_dec.at("size")->GetDataVector2("origin");
 												}
 												__object_dec->Size_dec = new BasicDec();
 												__object_dec->Size_dec->InsertDataVector2("origin", value);
@@ -3570,7 +3570,7 @@ namespace Utility
 			}
 
 			//parse scale
-			child_element = element_xml->FirstChildElement("Size");
+			child_element = element_xml->FirstChildElement("size");
 			if (child_element)
 			{
 				const char * str_value = child_element->Attribute("origin");
@@ -4110,9 +4110,9 @@ namespace Utility
 								_object->text_dec->d_color_border[3] = tint_border.a;
 							}
 						}
-						if (attribute->Attribute("color"))
+						if (attribute->Attribute("Color"))
 						{
-							Color4B tint_ = ConvertToColor(attribute->Attribute("color"));
+							Color4B tint_ = ConvertToColor(attribute->Attribute("Color"));
 							_object->text_dec->d_color[0] = tint_.r;
 							_object->text_dec->d_color[1] = tint_.g;
 							_object->text_dec->d_color[2] = tint_.b;
@@ -4667,7 +4667,7 @@ namespace Utility
 				}
 
 				//color
-				child_element = wtemplate->FirstChildElement("color");
+				child_element = wtemplate->FirstChildElement("Color");
 				if (child_element)
 				{
 					const char * str_value = child_element->Attribute("origin");
