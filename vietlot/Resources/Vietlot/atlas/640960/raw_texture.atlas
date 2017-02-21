@@ -40,7 +40,7 @@ ico_options
   index: -1
 list_item_df
   rotate: false
-  xy: 1, 63
+  xy: 50, 89
   size: 5, 6
   split: 0, 0, 1, 2
   orig: 5, 6
@@ -48,7 +48,7 @@ list_item_df
   index: -1
 list_item_selected
   rotate: false
-  xy: 50, 89
+  xy: 459, 473
   size: 5, 6
   split: 0, 0, 1, 2
   orig: 5, 6
@@ -101,5 +101,51 @@ number_yeallow
   xy: 323, 1
   size: 100, 100
   orig: 100, 100
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 1, 52
+  size: 19, 17
+  split: 5, 5, 6, 5
+  orig: 19, 17
+  offset: 0, 0
+  index: -1
+
+raw_texture2.png
+size: 64,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+list0/bkg
+  rotate: false
+  xy: 1, 27
+  size: 36, 36
+  split: 16, 16, 16, 16
+  pad: 0, 0, 0, 0
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+list0/itembkg1
+  rotate: false
+  xy: 1, 1
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+list0/itembkg2
+  rotate: false
+  xy: 4, 1
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+list0/top_bkgmenu
+  rotate: false
+  xy: 1, 4
+  size: 36, 21
+  split: 16, 16, 16, 1
+  pad: 0, 0, 0, 0
+  orig: 36, 21
   offset: 0, 0
   index: -1

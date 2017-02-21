@@ -2,7 +2,7 @@
 #include "DetailVietlot.h"
 namespace jsmessage
 {
-
+	//#define _CRT_NO_VA_START_VALIDATION 
 	ListVietLot::ListVietLot() {
 		details.clear();
 	}

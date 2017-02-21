@@ -14,9 +14,20 @@
 					
 				</common_value>
 				
-				
-				
-				<Widget id="10" typeRes="layout" name = "number_layout" idx_appear ="1" visible="1">		
+				<Widget id="0" typeRes="panel" 	name = "bg" 	 				idx_appear ="1">		
+					<common_value>
+						<common 		name="source" 			value="white.9.png"/>
+						<common			name="stick_screen"		value="1"/>
+						<common			name="scale_9"			value="1"/>
+						<common			name="use_nine_path"	value="1"/>					
+						<common			name="anchor_point"		value="0_0"/>
+					</common_value>
+						
+					<pos 		origin = "0_0" 	/>
+					<size 		origin = "540_960" 	/>
+				</Widget>					
+					
+				<Widget id="1" typeRes="layout" name = "number_layout" 			idx_appear ="1" visible="1">		
 					<common_value>
 						<common			name="anchor_point"			value="0.5_1"/>
 					</common_value>
@@ -131,6 +142,134 @@
 					<pos 		origin = "270_750" 	/>
 					<size 		origin = "460_220" 	/>
 				</Widget>			
+				
+				<Widget id="3" typeRes="layout" name = "user_result_layout" 	idx_appear ="1" >
+					<common_value>
+						<common 		name="anchor_point" 	value="0.5_0"/>
+						<common			name="stick_screen"		value="1"/>		
+					</common_value>
+					<Widget id="0" typeRes="panel" 			 name = "bg" 								idx_appear ="1" >		
+						<common_value>
+							<common 		name="source" 			value="list0/bkg.9.png"/>
+							<common 		name="use_nine_path" 	value="1"/>
+							<common 		name="scale_9" 			value="1"/>
+							<common 		name="anchor_point" 	value="0_0"/>
+						</common_value>					
+						<pos 		origin = "0_0" 	/>
+						<size 		origin = "520_290" 	/>
+					</Widget>
+					<Widget id="1" typeRes="panel" 			 name = "title_bg" 							idx_appear ="1" >		
+						<common_value>
+							<common 		name="source" 			value="list0/top_bkgmenu.9.png"/>
+							<common 		name="use_nine_path" 	value="1"/>
+							<common 		name="scale_9" 			value="1"/>
+							<common 		name="anchor_point" 	value="0.5_1"/>
+						</common_value>
+								<Widget id="0" typeRes="font" 			name = "txt0" idx_appear ="1" >		
+									<common_value>
+										<common 		name="source" 		value="Giải Thưởng"/>
+										<common 		name="anchor_point" value="0_0.5"/>
+									</common_value>
+									<template_value>
+										<template 		name="temp_text_0"/>						
+									</template_value>	
+									<pos 		origin = "10_20" 	/>
+								</Widget>							
+								<Widget id="1" typeRes="font" 			name = "txt1" idx_appear ="1" >		
+									<common_value>
+										<common 		name="source" 		value="Trùng khớp"/>
+									</common_value>
+									<template_value>
+										<template 		name="temp_text_0"/>						
+									</template_value>	
+									<pos 		origin = "200_20" 	/>
+								</Widget>
+								<Widget id="2" typeRes="font" 			name = "txt2" idx_appear ="1" >		
+									<common_value>
+										<common 		name="source" 		value="Số lượng"/>
+									</common_value>
+									<template_value>
+										<template 		name="temp_text_0"/>						
+									</template_value>	
+									<pos 		origin = "330_20" 	/>
+								</Widget>
+								<Widget id="3" typeRes="font" 			name = "txt3" idx_appear ="1" >		
+									<common_value>
+										<common 		name="source" 		value="Giá trị(đ)"/>
+										<common 		name="anchor_point" value="1_0.5"/>
+									</common_value>
+									<template_value>
+										<template 		name="temp_text_0"/>						
+									</template_value>	
+									<pos 		origin = "510_20" 	/>
+								</Widget>
+								<pos 		origin = "260_290" 	/>
+								<size 		origin = "520_40" 	/>						
+					</Widget>
+					<Widget id="2" typeRes="layout" name = "layout_player" idx_appear ="2" >		
+									<common_value>
+										<common 		name="background_type" 		value="0"/>		
+										<common			name="stick_screen"			value="0"/>
+										<common			name="anchor_point" 		value="0_0"/>
+									</common_value>
+									<Widget id="0" typeRes="panel" 	name = "bg_0" 			idx_appear ="2" 	visible ="0">		
+										<common_value>
+											<common 		name="source" 		value="list0/itembkg1.png"/>
+											<common			name="scale_9"		value="1"/>
+											<common			name="anchor_point"	value="0_0"/>
+										</common_value>
+										<pos 		origin = "0_0" 	/>
+										<size 		origin = "520_50" 	/>
+									</Widget>
+									<Widget id="1" typeRes="panel" 	name = "bg_1" 			idx_appear ="2" 	visible ="0">		
+										<common_value>
+											<common 		name="source" 		value="list0/itembkg2.png"/>
+											<common			name="scale_9"		value="1"/>
+											<common			name="anchor_point"	value="0_0"/>
+										</common_value>
+										<pos 		origin = "0_0" 	/>
+										<size 		origin = "520_50" 	/>
+									</Widget>
+									<Widget id="2" typeRes="font" 	name = "stt_id" 		idx_appear ="2">		
+										<template_value>
+											<template 		name="temp_text_0"/>						
+										</template_value>
+										<common_value>
+											<common 		name="source" 		value="1."/>					
+											<common			name="anchor_point"	value="0.5_0.5"/>
+										</common_value>
+										<pos 		origin = "60_25" 	/>
+									</Widget>								
+									<Widget id="3" typeRes="font"	name = "title_id" 		idx_appear ="2">		
+										<template_value>
+											<template 		name="temp_text_0"/>						
+										</template_value>
+										<common_value>
+											<common 		name="source" 			value="player_name"/>					
+										</common_value>
+										<pos 		origin = "275_25" 	/>
+										<color 		origin = "250_200_75_255" 	/>
+									</Widget>										
+									<Widget id="4" typeRes="font" 	name = "number_win_id" 	idx_appear ="2">		
+										<template_value>
+											<template 		name="temp_text_0"/>						
+										</template_value>
+										<common_value>
+											<common 		name="source" 		value="10.000"/>					
+											<common			name="anchor_point"	value="0.5_0.5"/>
+										</common_value>
+										<pos 		origin = "540_25" 	/>
+										<color 		origin = "158_64_157_255" 	/>
+									</Widget>										
+																				
+									<pos 		origin = "0_0" 	/>
+									<size 		origin = "520_50" 	/>
+					</Widget>					
+								
+							
+					<pos 		origin = "270_100" 	/>
+					<size 		origin = "520_290" 	/>
+				</Widget>
 				
 				<pos 		origin = "270_480" 	/>
 				<size 		origin = "540_960" 	/>	
