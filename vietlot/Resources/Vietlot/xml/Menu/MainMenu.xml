@@ -1,0 +1,143 @@
+<?xml version ='1.0' encoding='UTF-8'?>
+<GAME>
+	<MenuWidget name="main_menu" 	designSize="540_960">
+			<fade_process max_idx_first="0">
+				<sound_click value="SFX_CLICK_4" delayTime="0.1" loop ="1"/>
+				<time_process id="0" val="0.0">
+					<sound FadeIn="" FadeOut="" delayTime="0.0" loop ="1"/>
+				</time_process>
+			</fade_process>	
+			
+			<Widget id="0" typeRes="layer_widget" name="main_menu" idx_appear ="0">
+				<common_value>
+					<common			name="stick_screen"		value="1"/>
+					
+				</common_value>
+				
+				
+				
+				<Widget id="10" typeRes="layout" name = "number_layout" idx_appear ="1" visible="1">		
+					<common_value>
+						<common			name="anchor_point"			value="0.5_1"/>
+					</common_value>
+					<Widget id="0" typeRes="panel" 	name = "ico_0" 	 idx_appear ="1">		
+						<common_value>
+							<common 		name="source" 			value="number_red.png"/>
+							<common			name="content_size"		value="1"/>
+							<common			name="anchor_point"		value="1_1"/>
+						</common_value>
+						<Widget id="0" typeRes="font" name = "txt" idx_appear ="5">		
+							<template_value>
+								<template name="temp_text_result"/>
+							</template_value>
+							<common_value>
+								<common 		name="source" 		value="00"/>		
+							</common_value>
+							<pos 		origin = "50_50" 	/>
+						</Widget>
+						<pos 		origin = "100_220" 	/>
+						<size 		origin = "100_100" 	/>
+					</Widget>
+					<Widget id="0" typeRes="panel" 	name = "ico_1" 	 idx_appear ="1">		
+						<common_value>
+							<common 		name="source" 			value="number_red.png"/>
+							<common			name="content_size"		value="1"/>
+							<common			name="anchor_point"		value="0_1"/>
+						</common_value>
+						<Widget id="0" typeRes="font" name = "txt" idx_appear ="5">		
+							<template_value>
+								<template name="temp_text_result"/>
+							</template_value>
+							<common_value>
+								<common 		name="source" 		value="00"/>		
+							</common_value>
+							<pos 		origin = "50_50" 	/>
+						</Widget>
+						<pos 		origin = "120_220" 	/>
+						<size 		origin = "100_100" 	/>
+					</Widget>					
+					<Widget id="0" typeRes="panel" 	name = "ico_2" 	 idx_appear ="1">		
+						<common_value>
+							<common 		name="source" 			value="number_red.png"/>
+							<common			name="content_size"		value="1"/>
+							<common			name="anchor_point"		value="1_1"/>
+						</common_value>
+						<Widget id="0" typeRes="font" name = "txt" idx_appear ="5">		
+							<template_value>
+								<template name="temp_text_result"/>
+							</template_value>
+							<common_value>
+								<common 		name="source" 		value="00"/>		
+							</common_value>
+							<pos 		origin = "50_50" 	/>
+						</Widget>
+						<pos 		origin = "340_220" 	/>
+						<size 		origin = "100_100" 	/>
+					</Widget>
+					<Widget id="0" typeRes="panel" 	name = "ico_4" 	 idx_appear ="1">		
+						<common_value>
+							<common 		name="source" 			value="number_red.png"/>
+							<common			name="content_size"		value="1"/>
+							<common			name="anchor_point"		value="0_1"/>
+						</common_value>
+						<Widget id="0" typeRes="font" name = "txt" idx_appear ="5">		
+							<template_value>
+								<template name="temp_text_result"/>
+							</template_value>
+							<common_value>
+								<common 		name="source" 		value="00"/>		
+							</common_value>
+							<pos 		origin = "50_50" 	/>
+						</Widget>
+						<pos 		origin = "360_220" 	/>
+						<size 		origin = "100_100" 	/>
+					</Widget>
+					<Widget id="0" typeRes="panel" 	name = "ico_5" 	 idx_appear ="1">		
+						<common_value>
+							<common 		name="source" 			value="number_red.png"/>
+							<common			name="content_size"		value="1"/>
+							<common			name="anchor_point"		value="1_0"/>
+						</common_value>
+						<Widget id="0" typeRes="font" name = "txt" idx_appear ="5">		
+							<template_value>
+								<template name="temp_text_result"/>
+							</template_value>
+							<common_value>
+								<common 		name="source" 		value="00"/>		
+							</common_value>
+							<pos 		origin = "50_50" 	/>
+						</Widget>
+						<pos 		origin = "220_0" 	/>
+						<size 		origin = "100_100" 	/>
+					</Widget>
+					<Widget id="0" typeRes="panel" 	name = "ico_6" 	 idx_appear ="1">		
+						<common_value>
+							<common 		name="source" 			value="number_red.png"/>
+							<common			name="content_size"		value="1"/>
+							<common			name="anchor_point"		value="0_0"/>
+						</common_value>
+						<Widget id="0" typeRes="font" name = "txt" idx_appear ="5">		
+							<template_value>
+								<template name="temp_text_result"/>
+							</template_value>
+							<common_value>
+								<common 		name="source" 		value="00"/>		
+							</common_value>
+							<pos 		origin = "50_50" 	/>
+						</Widget>
+						<pos 		origin = "240_0" 	/>
+						<size 		origin = "100_100" 	/>
+					</Widget>
+					<pos 		origin = "270_750" 	/>
+					<size 		origin = "460_220" 	/>
+				</Widget>			
+				
+				<pos 		origin = "270_480" 	/>
+				<size 		origin = "540_960" 	/>	
+			</Widget>
+			
+			
+				
+			
+	</MenuWidget>
+</GAME>

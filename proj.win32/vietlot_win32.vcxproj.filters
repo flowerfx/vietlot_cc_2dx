@@ -18,6 +18,9 @@
     <Filter Include="Classes\Menu">
       <UniqueIdentifier>{b002db66-ccf7-4500-bc59-ee16189c4b38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Menu\CommonMenu">
+      <UniqueIdentifier>{6fdc7b9d-36b6-42a0-a8d2-40420a3ba73d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="win32\main.cpp">
@@ -49,6 +52,18 @@
     </ClCompile>
     <ClCompile Include="..\vietlot\Classes\JsObject\Vietlot\ListVietlot.cpp">
       <Filter>Classes\JsObject\Vietlot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vietlot\Classes\Menu\CommonLayer.cpp">
+      <Filter>Classes\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vietlot\Classes\Menu\CommonMenu.cpp">
+      <Filter>Classes\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vietlot\Classes\Menu\CommonMenu\TopLayer.cpp">
+      <Filter>Classes\Menu\CommonMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vietlot\Classes\Menu\MainMenu.cpp">
+      <Filter>Classes\Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +102,18 @@
     </ClInclude>
     <ClInclude Include="..\vietlot\Classes\JsObject\Vietlot\ListVietlot.h">
       <Filter>Classes\JsObject\Vietlot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vietlot\Classes\Menu\CommonLayer.h">
+      <Filter>Classes\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vietlot\Classes\Menu\CommonMenu.h">
+      <Filter>Classes\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vietlot\Classes\Menu\CommonMenu\TopLayer.h">
+      <Filter>Classes\Menu\CommonMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vietlot\Classes\Menu\MainMenu.h">
+      <Filter>Classes\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

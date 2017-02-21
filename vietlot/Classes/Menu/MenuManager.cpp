@@ -5,13 +5,15 @@
 
 
 #include "LoadingMenu.h"
-
+#include "MainMenu.h"
+MenuManager * MenuManager::m_instance = nullptr;
 MenuManager::MenuManager()
 {
 	RegisterMenuUI();
 
 	p_IsPopUpAppear = false;
 	_table_menu_load.clear();
+	_common_menu = nullptr;
 }
 
 MenuManager::~MenuManager()
@@ -20,6 +22,7 @@ MenuManager::~MenuManager()
 
 
 	//weak pointer do not delete
+	_common_menu = nullptr;
 	_table_menu_load.clear();
 }
 
@@ -35,6 +38,9 @@ int	MenuManager::InitDetailScreen(MENU_LAYER id_screen)
 		PASSERT2(false, "id out of stack");
 		return -1;
 	}
+	if (_list_menu.find(id_screen) != _list_menu.end())
+		return id_screen;
+
 
 	auto val = s_factory_menu_entity.CreateNewProduct((MENU_LAYER)id_screen);
 	if (val)
@@ -42,7 +48,12 @@ int	MenuManager::InitDetailScreen(MENU_LAYER id_screen)
 		val->Init();
 		_list_menu.insert(std::pair<MENU_LAYER, BaseMenu*>((MENU_LAYER)id_screen, val));
 		_table_menu_load.push_back(id_screen);
-
+		if (id_screen == MENU_LAYER::COMMON_MENU)
+		{
+			_common_menu = val;
+			//push to the top screen logic cocos2dx
+			_common_menu->push_layer_to_main_scene(100);
+		}
 		return id_screen;
 	}
 	return -1;
@@ -55,6 +66,10 @@ void MenuManager::Update(float dt)
 		auto ui = _list_menu.at(_list_current_active_menu.at(i));
 		ui->SetIdxMenuData(i);
 		ui->Update(dt);
+	}
+	if (_common_menu)
+	{
+		_common_menu->Update(dt);
 	}
 }
 
@@ -195,6 +210,8 @@ MENU_LAYER MenuManager::GetCurrentMenuUI(int idx)
 void MenuManager::RegisterMenuUI()
 {
 	s_factory_menu_entity.RegisterProduct<LoadingMenu>(MENU_LAYER::LOADING_MENU);
+	s_factory_menu_entity.RegisterProduct<CommonMenu>(MENU_LAYER::COMMON_MENU);
+	s_factory_menu_entity.RegisterProduct<MainMenu>(MENU_LAYER::MAIN_MENU);
 }
 
 BaseMenu * MenuManager::GetMenuUI(MENU_LAYER name)
@@ -217,16 +234,15 @@ void MenuManager::OnShowDialog(
 	const RKString & title_2 )
 {
 
-	/*static_cast<CommonScreen*>(p_common_screen)->OnShowDialog(
+	static_cast<CommonMenu*>(_common_menu)->OnShowDialog(
 		title,
 		str,
 		type,
-		strCB,
 		func,
 		func1,
 		func2,
 		title_1,
-		title_2);*/
+		title_2);
 }
 
 void MenuManager::OnShowWaitingDialog()
@@ -246,7 +262,7 @@ void MenuManager::OnShowOKDialog(const RKString &  msg)
 
 void MenuManager::OnHideDialog()
 {
-	//static_cast<CommonScreen*>(p_common_screen)->OnHideDialog();
+	static_cast<CommonMenu*>(_common_menu)->OnHideDialog();
 }
 
 bool MenuManager::ChangeLanguage(LANGUAGE_TYPE lang)
@@ -355,4 +371,9 @@ const std::vector<int> & MenuManager::GetTableScreenLoad()
 void MenuManager::PushEvent(const std::function<void(void)> & func)
 {
   //  p_list_event.push_back(func);
+}
+
+BaseMenu * MenuManager::GetCommonMenu()
+{
+	return _common_menu;
 }

@@ -4569,7 +4569,7 @@ namespace Utility
 				}
 
 				//parse scale
-				child_element = wtemplate->FirstChildElement("Size");
+				child_element = wtemplate->FirstChildElement("size");
 				if (child_element)
 				{
 					const char * str_value = child_element->Attribute("origin");

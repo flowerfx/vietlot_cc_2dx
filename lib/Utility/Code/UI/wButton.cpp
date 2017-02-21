@@ -81,6 +81,7 @@ namespace Utility
 				{
 					p_is_only_text = true;
 				}
+				p_is_only_text = true;
 			}
 
 			if (p_title_text != "")

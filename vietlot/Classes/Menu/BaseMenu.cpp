@@ -6,7 +6,7 @@ BaseMenu::BaseMenu()
 {
 	_menu_come_from = MENU_LAYER::MENU_NONE;
     _menu_show_next= MENU_LAYER::MENU_NONE;
-
+	_menu_type = MENU_LAYER::MENU_NONE;
 	_list_event.clear();
 
 }

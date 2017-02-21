@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<GAME>
+    <MenuWidget designSize="540_960" name="common_menu">
+        <fade_process max_idx_first="0">
+			<sound_click value="SFX_CLICK" delayTime="0.1" loop ="1"/>
+			<time_process id="0" val="0.0">
+				<sound FadeIn="" FadeOut="" delayTime="0.0" loop ="1"/>
+			</time_process>
+		</fade_process>
+		
+        <Widget id="1" typeRes="layer_widget" name="common_menu" idx_appear ="0">
+			<common_value>
+				<common			name="stick_screen"		value="1"/>
+				<common			name="root"				value="1"/>
+			</common_value>
+			
+			
+			<Widget id="2" name ="top_layer" 			   com="CommonMenu.TopLayer">			
+			</Widget>
+			<!--
+			<Widget id="14" name = "dialog_screen" 		   com="CommonScreen.DialogLayer">		
+			</Widget>
+			-->
+		<pos 		origin = "270_480" 	/>
+		<Size 		origin = "540_960" 	/>	
+		</Widget>
+		
+		
+		
+	</MenuWidget>
+</GAME>

@@ -22,9 +22,9 @@ enum TYPE_DIALOG
 enum MENU_LAYER
 {
 	MENU_NONE = 0,
-
 	LOADING_MENU,
-
+	COMMON_MENU,
+	MAIN_MENU,
 	MENU_COUNT
 };
 class BaseMenu;
@@ -58,7 +58,7 @@ public:
 class BaseMenu : public MenuEntity
 {
 protected:
-
+	MENU_LAYER				_menu_type;
 	MENU_LAYER				_menu_come_from; 
     MENU_LAYER				_menu_show_next;
 

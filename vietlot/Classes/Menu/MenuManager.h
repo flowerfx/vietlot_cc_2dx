@@ -5,8 +5,8 @@
 #include "MainGame.h"
 #include "Factory.h"
 #include "cocos2d.h"
-
-
+#include "CommonLayer.h"
+#include "CommonMenu.h"
 class MenuManager
 {
 private:
@@ -23,17 +23,23 @@ private:
 	Factory::FactoryWithIndex<BaseMenu>		s_factory_menu_entity;
 	
 	//create a weak pointer to handle common screen
-	//BaseScreen*	  p_common_screen;
+	BaseMenu*								_common_menu;
+
+	//instance
+	static MenuManager * m_instance;
 protected:
 
 	void SetActiveUI(MENU_LAYER layer, int idx = -1);
 	void DeActiveUI(MENU_LAYER layer);
 	void RegisterMenuUI();
-	void LoadTextureAsGame(int id_game);
 public:
-	//load game list xml
-	void LoadXMLListGame(TiXmlDocument * p_objectXML);
- 
+	static MenuManager * GetInstance() {
+		if (!m_instance)
+		{
+			m_instance = new MenuManager();
+		}
+		return m_instance;
+	}
     void PushEvent(const std::function<void(void)> & func);
 public:
 	MenuManager();
@@ -93,7 +99,8 @@ public:
 
 
 	const std::vector<int> & GetTableScreenLoad();
-
+	//
+	BaseMenu * GetCommonMenu();
 public:
 
 	//happen when have backkey
@@ -101,9 +108,8 @@ public:
 
 	
 };
-
-#define ScrMgr ScreenManager::GetInstance()
-#define GetCommonScr static_cast<CommonScreen*>(ScreenManager::GetInstance()->GetCommonScreen())
+#define MenuMgr	MenuManager::GetInstance()
+#define CommonMn static_cast<CommonMenu*>(MenuMgr->GetCommonMenu())
 
 #endif //__MENU_MANAGER_H__
 

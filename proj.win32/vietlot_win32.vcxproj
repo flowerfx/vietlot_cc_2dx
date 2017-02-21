@@ -136,7 +136,7 @@ xcopy "$(Configuration).win32\*.dll" "$(OutDir)" /D /Y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
-xcopy "$(ProjectDir)..\vietlot\Resources" "$(OutDir)" /D /E /I /F /Y
+xcopy "$(ProjectDir)..\vietlot\Resources" "$(OutDir)" /D /Y
 xcopy "$(Configuration).win32\*.dll" "$(OutDir)" /D /Y</Command>
     </PreBuildEvent>
     <PreBuildEvent>
@@ -150,7 +150,11 @@ xcopy "$(Configuration).win32\*.dll" "$(OutDir)" /D /Y</Command>
     <ClCompile Include="..\vietlot\Classes\JsObject\Vietlot\ListVietlot.cpp" />
     <ClCompile Include="..\vietlot\Classes\MainGame.cpp" />
     <ClCompile Include="..\vietlot\Classes\Menu\BaseMenu.cpp" />
+    <ClCompile Include="..\vietlot\Classes\Menu\CommonLayer.cpp" />
+    <ClCompile Include="..\vietlot\Classes\Menu\CommonMenu.cpp" />
+    <ClCompile Include="..\vietlot\Classes\Menu\CommonMenu\TopLayer.cpp" />
     <ClCompile Include="..\vietlot\Classes\Menu\LoadingMenu.cpp" />
+    <ClCompile Include="..\vietlot\Classes\Menu\MainMenu.cpp" />
     <ClCompile Include="..\vietlot\Classes\Menu\MenuManager.cpp" />
     <ClCompile Include="..\vietlot\Classes\Utils.cpp" />
     <ClCompile Include="win32\main.cpp" />
@@ -163,7 +167,11 @@ xcopy "$(Configuration).win32\*.dll" "$(OutDir)" /D /Y</Command>
     <ClInclude Include="..\vietlot\Classes\JsObject\Vietlot\ListVietlot.h" />
     <ClInclude Include="..\vietlot\Classes\MainGame.h" />
     <ClInclude Include="..\vietlot\Classes\Menu\BaseMenu.h" />
+    <ClInclude Include="..\vietlot\Classes\Menu\CommonLayer.h" />
+    <ClInclude Include="..\vietlot\Classes\Menu\CommonMenu.h" />
+    <ClInclude Include="..\vietlot\Classes\Menu\CommonMenu\TopLayer.h" />
     <ClInclude Include="..\vietlot\Classes\Menu\LoadingMenu.h" />
+    <ClInclude Include="..\vietlot\Classes\Menu\MainMenu.h" />
     <ClInclude Include="..\vietlot\Classes\Menu\MenuManager.h" />
     <ClInclude Include="..\vietlot\Classes\Utils.h" />
     <ClInclude Include="resource.h" />

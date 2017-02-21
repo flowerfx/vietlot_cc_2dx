@@ -5,7 +5,7 @@
 
 LoadingMenu::LoadingMenu()
 {
-
+	_menu_type = LOADING_MENU;
 	_current_state_loading = -1;
 	_state_load_resource = 0;
 
@@ -55,20 +55,13 @@ void LoadingMenu::LoadXMLFile()
     //
     //
     PWARN1("THREAD: LOAD XML SET LOGIN ");
-    RKString set_load = "login";
+    RKString set_load = "state_0";
     XMLMgr->OnLoadXMLData1("UIWidget_table",
                            [&, set_load](TiXmlDocument * objectXMl)
                            {
                                XMLMgr->OnLoadUIWidgetDecTableXML(objectXMl, set_load);
                            });
-    //
-    PWARN1("THREAD: LOAD XML SET main_0 ");
-    set_load = "main_0";
-    XMLMgr->OnLoadXMLData1("UIWidget_table",
-                           [&, set_load](TiXmlDocument * objectXMl)
-                           {
-                               XMLMgr->OnLoadUIWidgetDecTableXML(objectXMl, set_load);
-                           });
+
     PWARN1("THREAD: LOAD XML FINISH");
     _finish_load_xml = true;
 }
@@ -166,7 +159,7 @@ int LoadingMenu::Update(float dt)
 	{
 		_current_state_loading++;
 
-		//MenuMgr->SwitchToMenu(LOGIN_SCREEN, LOADING_SCREEN);
+		MenuMgr->SwitchToMenu(MAIN_MENU, _menu_type);
 	}
     else if (_current_state_loading == 11)
 	{
@@ -191,7 +184,8 @@ void LoadingMenu::OnProcessWidgetChild(const RKString & name, UI_TYPE type_widge
 
 void LoadingMenu::OnDeactiveCurrentMenu()
 {
-	MenuMgr->CloseCurrentMenu(LOADING_MENU);
+	MenuMgr->CloseCurrentMenu(_menu_type);
+	CommonMn->OnShowLayer(COMMON_LAYER::TOP_LAYER);
 	//p_menu_show_next = MENU_NONE;
 }
 

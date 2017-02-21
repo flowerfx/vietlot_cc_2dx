@@ -24,6 +24,18 @@
 				<common name="stage_scale9" 	value="3"/>
 			</common_value>
 		</template>
+		<template id="19" name="temp_btn">
+			<common_value>
+				<common 		name="source" 			value="btn_common.9.png"/>
+				<common 		name="press" 			value="btn_common.9.png"/>
+				<common 		name="disable" 			value="btn_common_disable.9.png"/>
+				<common			name="scale_9"			value="1"/>
+				<common			name="use_nine_path" 	value="1"/>
+				<common			name="casca_opacity" 	value="0"/>
+				<common 		name="scale_press" 		value="-0.05"/>
+			</common_value>
+			<opacity 		origin = "0" 	/>
+		</template>
 		<template id="20" name="temp_btn_blue">
 			<common_value>
 				<common 		name="source" 			value="default-round-blue.9.png"/>
@@ -65,17 +77,27 @@
 			</template_value>
 			<size 		origin = "25_25" 	/>
 		</template>
-		<template id="0" name="temp_text_0_small">
+		<template id="1" name="temp_text_0_small">
 			<template_value>				
 				<template    		name="temp_text_default"/>	
 			</template_value>
 			<size 		origin = "20_20" 	/>
 		</template>
-		<template id="0" name="temp_text_0_big">
+		<template id="2" name="temp_text_0_big">
 			<template_value>				
 				<template    		name="temp_text_default"/>	
 			</template_value>
 			<size 		origin = "30_30" 	/>
+		</template>
+		
+		<template id="3" name="temp_text_result">
+			<template_value>				
+				<template    		name="temp_text_default"/>	
+			</template_value>
+			<common_value>				
+				<common    		name="font_idx"			value="6"/>
+			</common_value>
+			<size 		origin = "80_80" 	/>
 		</template>
 		
 	</template_list>

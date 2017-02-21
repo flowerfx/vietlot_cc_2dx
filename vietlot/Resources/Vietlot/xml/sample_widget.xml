@@ -1,0 +1,35 @@
+<!--
+
+//general
+<common 		name="source" 			value="..."/> //value string , df: ""
+<common			name="stick_screen"		value="1"/> //value 1 or 0 , df : 0
+<common			name="anchor_point"		value="0.5_0.5"/> //value vec2 , df: 0.5_0.5
+<common			name="use_atlas"		value="1"/> //value 1 or 0 , df: 1
+<common			name="casca_color"		value="1"/> //value 1 or 0 , df: 1
+<common			name="casca_opacity"	value="1"/> //value 1 or 0 , df: 1
+<common			name="state_scale"		value="0"/> // value : 0 , 1, 2  if not stick screen scale as 0 width, 1 height, 2 keep the design size not scale , df: 0
+<common			name="zorder"			value="0"/> // value signed int , df: 0
+
+//widget entity
+<common			name="scale_9"			value="0"/> //value 1 or 0 , df: 0 // make the widget as 9scale
+<common			name="content_size"		value="0"/> //value 1 or 0 , df: 0 // set the size of widget as contain size when init
+<common			name="update_invisible"	value="0"/> //value 1 or 0 , df: 0 // update the widget when invisible
+<common			name="swallow_touch"	value="0"/> //value 1 or 0 , df: 0 
+<common			name="stage_scale9"		value="0"/> //value 0,1,2,3 , df: 0 //when have scale 9 mark the widget scale as: 0 normal, 1 as x axis, 2 as y axis, 3 as xy axis
+<common			name="design_scale9"	value="0_0"/> //value vec2 , df: 0_0 // when stage_scale9 is 3 can make a custom design size to scale object, if the design_scale9 = vec2(0,0) , use the origin design
+<common			name="use_nine_path"	value="0"/> // value 1 or 0 , df: 0 // when have scale 9, use the capinsert of texture instead of the df cocos
+
+<common			name="min_size_scale"	value="0"/> //value unsigned int , df: 650 // when the size of screen lower to min_size_scale, the size of object will be increased
+
+<common			name="touch_zone"		value="0_0"/> // value vec2 df:0_0 size of custom touch zone with anchor 0.5_0.5 of object
+<common			name="touch_anchor"		value="0.5_0.5"/> // value vec2 df:0.5_0.5 , custom anchor touch of object when have touch zone
+
+<common			name="no_add_event"		value="0"/> //value 1 or 0 , df: 1 // don't add event when init 
+
+//animation widget 
+<common			name="scale_9"			value="0"/> //value 1 or 0 , df: 0 // make the widget as 9scale
+<common			name="content_size"		value="0"/> //value 1 or 0 , df: 0 // set the size of widget as contain size when init
+<common			name="update_invisible"	value="0"/> //value 1 or 0 , df: 0 // update the widget when invisible
+
+
+-->

@@ -5,7 +5,8 @@
 	</list_menu_widget>
 	
 	<list_menu_widget name="state_0">
-		<UIWidget id="2" name="common_menu" 			path="xml\Menu\CommonMenu.xml"/>
+		<UIWidget id="2" name="common_menu" 		path="xml\Menu\CommonMenu.xml"/>
+		<UIWidget id="3" name="main_menu" 			path="xml\Menu\MainMenu.xml"/>
 	</list_menu_widget>
 	
 	

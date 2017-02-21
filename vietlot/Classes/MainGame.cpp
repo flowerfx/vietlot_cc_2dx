@@ -14,19 +14,17 @@
 using namespace Utility;
 USING_NS_CC;
 
-MainGame * MainGame::p_Instance = NULL;
+MainGame * MainGame::p_Instance = nullptr;
 
 MainGame::MainGame()
 {
 	this->retain();
-	_MenuMgr = new MenuManager();
 	_loadingStep = 0;
 }
 
 
 MainGame::~MainGame()
 {
-	SAFE_DELETE(_MenuMgr);
 	//_profile_font->release();
 	this->autorelease();
 }
@@ -99,7 +97,7 @@ bool MainGame::InitTheGame(float dt)
 		TextureMgr->LoadFont();
 		SocialMgr->Init();
 
-		_MenuMgr->Init();
+		MenuMgr->Init();
 
 		RKString set_load = "loading";
 		XMLMgr->OnLoadXMLData1("UIWidget_table",
@@ -107,21 +105,21 @@ bool MainGame::InitTheGame(float dt)
 		{
 			XMLMgr->OnLoadUIWidgetDecTableXML(objectXMl, set_load); 
 		});	
-		_MenuMgr->InitDetailScreen(MENU_LAYER::LOADING_MENU);
+		MenuMgr->InitDetailScreen(MENU_LAYER::LOADING_MENU);
 		//
 		_loadingStep++;
 
-		_MenuMgr->SetStateLoading(_loadingStep);
+		MenuMgr->SetStateLoading(_loadingStep);
 		return false;
 	}
 	else
 	{
         //here to call dismiss Splash screen on android
         
-		_loadingStep = _MenuMgr->GetStateLoading();
+		_loadingStep = MenuMgr->GetStateLoading();
         if(_loadingStep == 1)
         {
-            _MenuMgr->SwitchToMenu(MENU_LAYER::LOADING_MENU);
+			MenuMgr->SwitchToMenu(MENU_LAYER::LOADING_MENU);
         }
 		if (_loadingStep < 10)
 		{
@@ -153,10 +151,9 @@ void MainGame::update(float dt)
 
 	if(_loadingStep >= 1)
 	{	
-		if (_MenuMgr)
-		{
-			_MenuMgr->Update(dt);
-		}
+		
+		MenuMgr->Update(dt);
+		
 		/*if (!_profile_font->getParent())
 			getParent()->addChild(_profile_font, 9999)*/;
 		//_profile_font->setText(GetProfiler()->getResult());

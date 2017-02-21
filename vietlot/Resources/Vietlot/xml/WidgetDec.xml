@@ -1,6 +1,6 @@
 <?xml version ='1.0' encoding='UTF-8'?>
 <GAME>
 	<template_widget_dec>
-		
+		<widget name="CommonMenu.TopLayer" 	value="xml\Menu\CommonMenu\TopLayer.xml"/>
 	</template_widget_dec>
 </GAME>

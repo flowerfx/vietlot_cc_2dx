@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<GAME>
+			<Widget id="10" typeRes="layout" name = "top_layer" idx_appear ="1" visible="0">		
+					<common_value>
+						<common 		name="source" 				value="dark_blue_tex.9.png"/>
+						<common 		name="scale_9" 				value="1"/>
+						<common 		name="use_nine_path" 		value="1"/>
+						<common 		name="background_type" 		value="3"/>
+						<common			name="stick_screen"			value="1"/>
+						<common			name="anchor_point"			value="0.5_1"/>
+						<common			name="clipping_enable"		value="1"/>
+					</common_value>
+					<Widget id="0" typeRes="panel" 	name = "logo_chim" 	 idx_appear ="1">		
+						<common_value>
+							<common 		name="source" 		value="logo_chim.png"/>
+							<common			name="anchor_point"	value="1_1"/>
+						</common_value>
+						<pos 		origin = "320_0" 	/>
+						<size 		origin = "354_327" 	/>
+						<rotate 	origin = "180" 	/>
+					</Widget>			
+					<Widget id="1" typeRes="button" name = "btn_options" idx_appear ="2">		
+						<template_value>
+							<template name="temp_btn"/>
+						</template_value>
+						<common_value>
+							<common			name="anchor_point"	value="0_0"/>
+						</common_value>
+						
+						
+						<Widget id="1" typeRes="panel" 	name = "icon" idx_appear ="1">		
+							<common_value>
+								<common 		name="source" 		value="ico_options.png"/>
+							</common_value>
+							<pos 		origin = "30_30" 	/>
+							<size 		origin = "47_21" 	/>
+						</Widget>
+						
+						<pos 		origin = "10_10" 	/>
+						<size 		origin = "60_60" 	/>					
+					</Widget>
+										
+					<pos 		origin = "270_960" 	/>
+					<size 		origin = "540_182" 	/>
+			</Widget>
+																		
+</GAME>

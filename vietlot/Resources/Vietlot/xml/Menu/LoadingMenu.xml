@@ -3,8 +3,8 @@
 	<MenuWidget name="loading_menu" 	designSize="540_960">
 			<fade_process max_idx_first="0">
 				<sound_click value="SFX_CLICK_4" delayTime="0.1" loop ="1"/>
-				<time_process id="0" val="1.5">
-					<sound FadeIn="SFX_APPEAR_1" FadeOut="" delayTime="0.125" loop ="1"/>
+				<time_process id="0" val="0.0">
+					<sound FadeIn="" FadeOut="" delayTime="0.0" loop ="1"/>
 				</time_process>
 			</fade_process>	
 			
@@ -24,13 +24,19 @@
 					<pos 		origin = "0_0" 	/>
 					<size 		origin = "540_960" 	/>
 				</Widget>
-				
-				
-				<Widget id="0" typeRes="panel" 	name = "panel_logo" idx_appear ="1">		
+				<Widget id="1" typeRes="panel" 	name = "logo_chim" 				idx_appear ="1">		
+					<common_value>
+						<common 		name="source" 		value="logo_chim.png"/>
+						<common			name="anchor_point"	value="1_1"/>
+					</common_value>
+					<pos 		origin = "540_960" 	/>
+					<size 		origin = "354_327" 	/>
+				</Widget>			
+				<Widget id="2" typeRes="panel" 	name = "panel_logo" 			idx_appear ="1">		
 					<common_value>
 						<common 		name="source" 		value="logo.png"/>
 					</common_value>
-					<pos 		origin = "270_480" 	/>
+					<pos 		origin = "270_600" 	/>
 					<size 		origin = "320_84" 	/>
 				</Widget>			
 				
