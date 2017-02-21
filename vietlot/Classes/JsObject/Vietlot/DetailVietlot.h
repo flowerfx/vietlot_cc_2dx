@@ -13,6 +13,8 @@ namespace jsmessage
 			CC_SYNTHESIZE_PASS_BY_REF(u32, day, Day)
 			CC_SYNTHESIZE_PASS_BY_REF(u32, month, Month)
 			CC_SYNTHESIZE_PASS_BY_REF(u32, year, Year)
+		//time raw
+			CC_SYNTHESIZE_PASS_BY_REF(s64, time, Time)
 		//string number
 			CC_SYNTHESIZE_PASS_BY_REF(std::string, number, Number)
 		//detail number
@@ -29,6 +31,8 @@ namespace jsmessage
 		
 		virtual rapidjson::Document toJson() override;
 		virtual void toData(rapidjson::Document & json)override;
+
+		bool containNumber(const u32 * nums, const u32 & count);
 	};
 }
 #endif //__DETAIL_VIETLOT_H__
